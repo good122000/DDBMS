@@ -26,10 +26,10 @@
     <Subexpression>import infile&quot;(.+?)&quot; into database (\w+)</Subexpression>
   </Expression>
   <Expression name="select" subcount="4">
-    <Subexpression>select (.+?) from (.+?) where (((.+?)([=&gt;&lt;]{1,2})(.+?)( and )?)+)</Subexpression>
-    <Subexpression>*|[^*,]+</Subexpression>
-    <Subexpression>[^,]+</Subexpression>
-    <Subexpression>([^ ]+?)([=&gt;&lt;]{1,2})([^ ]+)</Subexpression>
+    <Subexpression>select (.+?) from ([^ ]+?)( where (((.+?)([=&gt;&lt;]{1,2})(.+?)( and )?)+))?</Subexpression>
+    <Subexpression>\*|((\w+).)?(\w+)</Subexpression>
+    <Subexpression>\w+</Subexpression>
+    <Subexpression>((\w+).)?(\w+)([=&gt;&lt;]{1,2})((\w+).)?([^ ]+)</Subexpression>
   </Expression>
   <Expression name="droptable" subcount="1">
     <Subexpression>droptable (\w+)</Subexpression>
