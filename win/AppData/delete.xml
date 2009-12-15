@@ -1,0 +1,8 @@
+<?xml version="1.0"?><!--delete-->
+<Delete tablename="">
+  <Condition>
+    <Left></Left>
+    <Operaor></Operaor>
+    <Right></Right>
+  </Condition>
+</Delete>

@@ -41,6 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="D:\DDBMS\src\LocalAgent;&quot;D:\DDBMS\src\MySQL++&quot;;D:\DDBMS\src\TinyXML;&quot;F:\Program Files\boost\boost_1_39&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -61,6 +62,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="2"
+				AdditionalLibraryDirectories="&quot;F:\Program Files\boost\boost_1_39\lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
@@ -194,6 +196,18 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="LocalAgent"
+				>
+				<File
+					RelativePath="..\src\LocalAgent\LocalAgent.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\LocalAgent\Res.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -209,6 +223,30 @@
 				</File>
 				<File
 					RelativePath="..\src\TinyXML\tinyxml.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="LocalAgent"
+				>
+				<File
+					RelativePath="..\src\LocalAgent\BoostDef.h"
+					>
+				</File>
+				<File
+					RelativePath="..\src\LocalAgent\Define.h"
+					>
+				</File>
+				<File
+					RelativePath="..\src\LocalAgent\LocalAgent.h"
+					>
+				</File>
+				<File
+					RelativePath="..\src\LocalAgent\Res.h"
+					>
+				</File>
+				<File
+					RelativePath="..\src\LocalAgent\StdDef.h"
 					>
 				</File>
 			</Filter>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?><!--local data dictionary-->
+<LDD>
+  <SqlSetting>
+    <SqlType>MySQL</SqlType>
+    <Address>localhost</Address>
+    <Port>3306</Port>
+    <UserName>root</UserName>
+    <PassWord>8923131</PassWord>
+    <DataBase>ddbms</DataBase>
+  </SqlSetting>
+  <AppSetting>
+    <SiteName>site1</SiteName>
+    <Port>1234</Port>
+  </AppSetting>
+</LDD>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?><!--legal command-->
+<Expressions count="11" casesensitive="no" >
+  <Expression neame="definesite" subcount="1">
+    <Subexpression>definesite (\w+) (.+?) (\d+?)</Subexpression>
+  </Expression>
+  <Expression name="createdb" subcount="1">
+    <Subexpression>createdb (\w+?)</Subexpression>
+  </Expression>
+  <Expression name="createtable" subcount="2">
+    <Subexpression>createtable (\w+)\(((\w+ \w+(\(\d+\))?( key)?,?)+)\)</Subexpression>
+    <Subexpression>(\w+) (\w+)(\((\d+)\))?( )?(key)?</Subexpression>
+  </Expression>
+  <Expression name="flagment" subcount=""></Expression>
+  <Expression name="allocate" subcount="1">
+    <Subexpression>allocate (.+?) to (\w+?)</Subexpression>
+  </Expression>
+  <Expression name="insert" subcount="3">
+    <Subexpression>insert into (\w+)\(((\w+,?)+)\) values\(((.+?,?)+)\)</Subexpression>
+    <Subexpression>\w+</Subexpression>
+    <Subexpression>[^,]+</Subexpression>
+  </Expression>
+  <Expression name="delete" subcount="1">
+    <Subexpression>delete from (\w+) where (\w+)([=&gt;&lt;]{1,2})(.+?)</Subexpression>
+  </Expression>
+  <Expression name="import" subcount="1">
+    <Subexpression>import infile&quot;(.+?)&quot; into database (\w+)</Subexpression>
+  </Expression>
+  <Expression name="select" subcount="4">
+    <Subexpression>select (.+?) from (.+?) where (((.+?)([=&gt;&lt;]{1,2})(.+?)( and )?)+)</Subexpression>
+    <Subexpression>*|[^*,]+</Subexpression>
+    <Subexpression>[^,]+</Subexpression>
+    <Subexpression>([^ ]+?)([=&gt;&lt;]{1,2})([^ ]+)</Subexpression>
+  </Expression>
+  <Expression name="droptable" subcount="1">
+    <Subexpression>droptable (\w+)</Subexpression>
+  </Expression>
+  <Expression name="dropdb" subcount="1">
+    <Subexpression>dropdb (\w+)</Subexpression>
+  </Expression>
+</Expressions>
