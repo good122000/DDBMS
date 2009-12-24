@@ -1,6 +1,6 @@
 <?xml version="1.0"?><!--legal command-->
 <Expressions count="11" casesensitive="no" >
-  <Expression neame="definesite" subcount="1">
+  <Expression name="definesite" subcount="1">
     <Subexpression>definesite (\w+) (.+?) (\d+?)</Subexpression>
   </Expression>
   <Expression name="createdb" subcount="1">
@@ -26,10 +26,10 @@
     <Subexpression>import infile&quot;(.+?)&quot; into database (\w+)</Subexpression>
   </Expression>
   <Expression name="select" subcount="4">
-    <Subexpression>select (.+?) from ([^ ]+?)( where (((.+?)([=&gt;&lt;]{1,2})(.+?)( and )?)+))?</Subexpression>
-    <Subexpression>\*|((\w+).)?(\w+)</Subexpression>
+    <Subexpression>select ([^ ]+) from ([^ ]+?)( where (((.+?)([=&gt;&lt;]{1,2})(.+?)( and )?)+))?</Subexpression>
+    <Subexpression>\*|((\w+)\.)?(\w+)</Subexpression>
     <Subexpression>\w+</Subexpression>
-    <Subexpression>((\w+).)?(\w+)([=&gt;&lt;]{1,2})((\w+).)?([^ ]+)</Subexpression>
+    <Subexpression>((\w+)\.)?(\w+)([=&gt;&lt;]{1,2})((\w+)\.)?([^ ]+)</Subexpression>
   </Expression>
   <Expression name="droptable" subcount="1">
     <Subexpression>droptable (\w+)</Subexpression>

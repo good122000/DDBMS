@@ -1,95 +1,64 @@
 <?xml version="1.0"?><!--global data dictionary-->
-<Tables count="3">
-  <Table name="Student" fragmentation="horizontal" sites="3">
-    <Site name="site1" address="localhost" port="1234" conditions="1">
-      <Condition>
-        <Left>id</Left>
-        <Operator>L</Operator>
-        <Right>10</Right>
-      </Condition>
-    </Site>
-    <Site name="site2" address="localhost" port="2345" conditions="2">
-      <Condition>
-        <Left>id</Left>
-        <Operator>GE</Operator>
-        <Right>10</Right>
-      </Condition>
-      <Condition>
-        <Left>id</Left>
-        <Operator>L</Operator>
-        <Right>20</Right>
-      </Condition>
-    </Site>
-    <Site name="site3" address="localhost" port="3456" conditions="1">
-      <Condition>
-        <Left>id</Left>
-        <Operator>GE</Operator>
-        <Right>20</Right>
-      </Condition>
-    </Site>
-  </Table>
-  <Table name="Course" fragmentation="horizontal" sites="2">
-    <Site name="site1" address="localhost" port="1234" conditions="1">
-      <Condition>
-        <Left>id</Left>
-        <Operator>L</Operator>
-        <Right>4</Right>
-      </Condition>
-    </Site>
-    <Site name="site2" address="localhost" port="2345" conditions="1">
-      <Condition>
-        <Left>id</Left>
-        <Operator>GE</Operator>
-        <Right>4</Right>
-      </Condition>
-    </Site>
-  </Table>
-  <Table name="Exam" fragmention="horizontal" sites="3">
-    <Site name="site1" address="localhost" port="1234" conditions="2">
-      <Condition>
-        <Left>student_id</Left>
-        <Operator>L</Operator>
-        <Right>10</Right>
-      </Condition>
-      <Condition>
-        <Left>course_id</Left>
-        <Operator>L</Operator>
-        <Right>4</Right>
-      </Condition>
-    </Site>
-    <Site name="site2" address="localhost" port="2345" conditions="4">
-      <Condition>
-        <Left>student_id</Left>
-        <Operator>GE</Operator>
-        <Right>10</Right>
-      </Condition>
-      <Condition>
-        <Left>student_id</Left>
-        <Operator>L</Operator>
-        <Right>20</Right>
-      </Condition>
-      <Condition>
-        <Left>course_id</Left>
-        <Operator>GE</Operator>
-        <Right>4</Right>
-      </Condition>
-      <Condition>
-        <Left>course_id</Left>
-        <Operator>L</Operator>
-        <Right>6</Right>
-      </Condition>
-    </Site>
-    <Site name="site3" address="localhost" port="3456" conditions="2">
-      <Condition>
-        <Left>student_id</Left>
-        <Operator>GE</Operator>
-        <Right>20</Right>
-      </Condition>
-      <Condition>
-        <Left>course_id</Left>
-        <Operator>GE</Operator>
-        <Right>6</Right>
-      </Condition>
-    </Site>
-  </Table>
-</Tables>
+<GDD>
+  <SiteSetting>
+    <Site name="site1" address="localhost" port="1234"></Site>
+    <Site name="site2" address="localhost" port="2345"></Site>
+    <Site name="site3" address="localhost" port="3456"></Site>
+  </SiteSetting>
+  <TableSetting count="3">
+    <Table name="Student" fragmentation="horizontal" sites="3">
+      <Site name="site1" conditions="1">
+        <Range var="id">
+          <Low equal="yes">MIN</Low>
+          <Up equal="no">10</Up>
+        </Range>
+      </Site>
+      <Site name="site2" conditions="2">
+        <Range var="id">
+          <Low equal="yes">10</Low>
+          <Up equal="no">20</Up>
+        </Range>
+      </Site>
+      <Site name="site3" conditions="1">
+        <Range var="id">
+          <Low equal="yes">20</Low>
+          <Up equal="no">MAX</Up>
+        </Range>
+      </Site>
+    </Table>
+    <Table name="Course" fragmentation="horizontal" sites="2">
+      <Site name="site1" conditions="1">
+        <Range var="id">
+          <Low equal="yes">MIN</Low>
+          <Up equal="no">4</Up>
+        </Range>
+      </Site>
+      <Site name="site2" conditions="1">
+        <Range var="id">
+          <Low equal="yes">4</Low>
+          <Up equal="no">Max</Up>
+        </Range>
+       </Site>
+    </Table>
+    <Table name="Exam" fragmention="horizontal" sites="3">
+      <Site name="site1" conditions="1">
+        <Range var="id">
+          <Low equal="yes">MIN</Low>
+          <Up equal="no">10</Up>
+        </Range>
+      </Site>
+      <Site name="site2" conditions="2">
+        <Range var="id">
+          <Low equal="yes">10</Low>
+          <Up equal="no">20</Up>
+        </Range>
+      </Site>
+      <Site name="site3" conditions="1">
+        <Range var="id">
+          <Low equal="yes">20</Low>
+          <Up equal="no">MAX</Up>
+        </Range>
+      </Site>
+    </Table>
+  </TableSetting>
+</GDD>

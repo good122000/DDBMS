@@ -116,6 +116,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="D:\DDBMS\src\TinyXML;&quot;F:\Program Files\boost\boost_1_39&quot;;D:\DDBMS\src\LocalAgent"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -135,6 +136,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;F:\Program Files\boost\boost_1_39\lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
@@ -176,6 +178,10 @@
 				RelativePath="..\src\main.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\temp.txt"
+				>
+			</File>
 			<Filter
 				Name="TintXML"
 				>
@@ -203,10 +209,6 @@
 					RelativePath="..\src\LocalAgent\LocalAgent.cpp"
 					>
 				</File>
-				<File
-					RelativePath="..\src\LocalAgent\Res.cpp"
-					>
-				</File>
 			</Filter>
 		</Filter>
 		<Filter
@@ -230,23 +232,7 @@
 				Name="LocalAgent"
 				>
 				<File
-					RelativePath="..\src\LocalAgent\BoostDef.h"
-					>
-				</File>
-				<File
-					RelativePath="..\src\LocalAgent\Define.h"
-					>
-				</File>
-				<File
 					RelativePath="..\src\LocalAgent\LocalAgent.h"
-					>
-				</File>
-				<File
-					RelativePath="..\src\LocalAgent\Res.h"
-					>
-				</File>
-				<File
-					RelativePath="..\src\LocalAgent\StdDef.h"
 					>
 				</File>
 			</Filter>
@@ -256,6 +242,74 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath=".\AppData\allocate.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\condition.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\createdb.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\createtable.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\data.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\definesite.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\delete.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\dropdb.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\droptable.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\GDD.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\import.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\insert.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\LDD.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\location.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\regex.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\select.xml"
+				>
+			</File>
+			<File
+				RelativePath=".\AppData\selectopt.xml"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>

@@ -10,6 +10,8 @@
   </SqlSetting>
   <AppSetting>
     <SiteName>site1</SiteName>
-    <Port>1234</Port>
+    <RevPort>1234</RevPort>
+    <ThreadPollSize>10</ThreadPollSize>
+    <SendPort>4321</SendPort>
   </AppSetting>
 </LDD>
