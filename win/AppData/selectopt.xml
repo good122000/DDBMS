@@ -1,0 +1,12 @@
+<?xml version="1.0"?><!--selectopt-->
+<SelectOpt>
+  <Table name="">
+    <Feild type="projection"></Feild>
+    <Feild></Feild>
+  </Table>
+  <Condition>
+    <Left type="feild" table=""></Left>
+    <Operator></Operator>
+    <Right type="value" table=""></Right>
+  </Condition>
+</SelectOpt>

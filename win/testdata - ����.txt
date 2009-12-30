@@ -1,0 +1,2318 @@
+Student	1500	3
+100001	'lei bai'	'M'	
+100002	'a pan'	'F'	
+100003	'zong wei'	'M'	
+100004	'zhang jiang'	'M'	
+100005	'zi jiang'	'M'	
+100006	'zuo wei'	'M'	
+100007	'zun bi'	'F'	
+100008	'fei he'	'M'	
+100009	'ya ping'	'F'	
+100010	'ping teng'	'F'	
+100011	'zhui lv'	'M'	
+100012	'cha xi'	'M'	
+100013	'xuan qian'	'F'	
+100014	'tuan tang'	'M'	
+100015	'sa wei'	'F'	
+100016	'jiao fu'	'M'	
+100017	'hen bian'	'F'	
+100018	'zeng fan'	'M'	
+100019	'zei an'	'F'	
+100020	'mie fei'	'M'	
+100021	'zhu he'	'M'	
+100022	'you xu'	'F'	
+100023	'hua shen'	'M'	
+100024	'cheng yun'	'M'	
+100025	'di qi'	'M'	
+100026	'zhai wang'	'F'	
+100027	'song han'	'F'	
+100028	'tuo qin'	'M'	
+100029	'juan zhang'	'M'	
+100030	'wa bi'	'F'	
+100031	'guan hua'	'F'	
+100032	'wo yuan'	'F'	
+100033	'kua you'	'M'	
+100034	'tuan an'	'M'	
+100035	'ka yuan'	'F'	
+100036	'rui tang'	'F'	
+100037	'cou fei'	'M'	
+100038	'shai miao'	'M'	
+100039	'tan yang'	'F'	
+100040	'gu lang'	'M'	
+100041	'tui dou'	'M'	
+100042	'dai kong'	'F'	
+100043	'huan zhang'	'F'	
+100044	'niang shi'	'M'	
+100045	'yin qin'	'M'	
+100046	'sun qi'	'F'	
+100047	'yao he'	'M'	
+100048	'gao he'	'M'	
+100049	'lao feng'	'F'	
+100050	'zu zhang'	'F'	
+100051	'jun shui'	'F'	
+100052	'yi he'	'M'	
+100053	'xu zhang'	'F'	
+100054	'nue pi'	'M'	
+100055	'hong bi'	'F'	
+100056	'fang ping'	'F'	
+100057	'die wang'	'F'	
+100058	'shuang pi'	'F'	
+100059	'sheng chang'	'M'	
+100060	'xiao wu'	'M'	
+100061	'shu wei'	'M'	
+100062	'xun fang'	'M'	
+100063	'dou feng'	'F'	
+100064	'hu ping'	'F'	
+100065	'zui bu'	'M'	
+100066	'cu feng'	'F'	
+100067	'o zhang'	'M'	
+100068	'xing yu'	'F'	
+100069	'xun yu'	'F'	
+100070	'mao ren'	'M'	
+100071	'hun ma'	'M'	
+100072	'song han'	'F'	
+100073	'ru xiao'	'M'	
+100074	'biao ge'	'F'	
+100075	'gua zhang'	'M'	
+100076	'suo peng'	'F'	
+100077	'qin lian'	'M'	
+100078	'mang kang'	'M'	
+100079	'bu shi'	'M'	
+100080	'shi lv'	'F'	
+100081	'xiang zhang'	'M'	
+100082	'mou cen'	'M'	
+100083	'bang yu'	'M'	
+100084	'sou yu'	'M'	
+100085	'duan hao'	'M'	
+100086	'zhi xue'	'M'	
+100087	'ti wu'	'F'	
+100088	'die he'	'M'	
+100089	'chu xue'	'F'	
+100090	'lun qi'	'M'	
+100091	'chun xie'	'F'	
+100092	'jia yin'	'F'	
+100093	'fei le'	'M'	
+100094	'rui yuan'	'M'	
+100095	'mi an'	'M'	
+100096	'beng chang'	'M'	
+100097	'chao hua'	'F'	
+100098	'juan jin'	'M'	
+100099	'nuo lang'	'F'	
+100100	're chang'	'F'	
+100101	'cuo shi'	'M'	
+100102	'zheng tang'	'F'	
+100103	'xian le'	'F'	
+100104	'zhao chang'	'M'	
+100105	'xiang tao'	'M'	
+100106	'ping yun'	'F'	
+100107	'pou bi'	'M'	
+100108	'shan yuan'	'M'	
+100109	'ba bao'	'M'	
+100110	'po jiang'	'F'	
+100111	'nao shen'	'F'	
+100112	'yin pan'	'F'	
+100113	'bei le'	'F'	
+100114	'diao qin'	'F'	
+100115	'm ju'	'M'	
+100116	'ce sun'	'M'	
+100117	'mang chen'	'M'	
+100118	'luo yu'	'M'	
+100119	'shuan shi'	'M'	
+100120	'man qi'	'F'	
+100121	'she zhao'	'M'	
+100122	'gan cao'	'F'	
+100123	'bao jiang'	'M'	
+100124	'lao chu'	'F'	
+100125	'an gu'	'M'	
+100126	'si wu'	'F'	
+100127	'fei tang'	'F'	
+100128	'zhuan sun'	'F'	
+100129	'qian wu'	'F'	
+100130	'jiao yuan'	'M'	
+100131	'ruo chang'	'F'	
+100132	'shen hao'	'F'	
+100133	'chuo xu'	'F'	
+100134	'chuai cen'	'F'	
+100135	'gu hua'	'F'	
+100136	'shen ma'	'F'	
+100137	'lan wu'	'F'	
+100138	'ti qin'	'F'	
+100139	'yi kong'	'F'	
+100140	'guan yan'	'M'	
+100141	'yuan fan'	'M'	
+100142	'huang fan'	'F'	
+100143	'hua lv'	'F'	
+100144	'wen qian'	'M'	
+100145	'pi bian'	'F'	
+100146	'mou li'	'F'	
+100147	'shai luo'	'M'	
+100148	'ku tang'	'M'	
+100149	'shun pi'	'F'	
+100150	'lao lv'	'M'	
+100151	'xun ge'	'F'	
+100152	'ta luo'	'M'	
+100153	'niu wang'	'F'	
+100154	'zha yu'	'F'	
+100155	'chi feng'	'M'	
+100156	'qiang wei'	'M'	
+100157	'ti lv'	'M'	
+100158	'jing hua'	'M'	
+100159	'jun huang'	'M'	
+100160	'gun chang'	'M'	
+100161	'ri shen'	'M'	
+100162	'qin huang'	'F'	
+100163	'tiao gu'	'M'	
+100164	'ao shui'	'M'	
+100165	'te he'	'F'	
+100166	'tian wu'	'M'	
+100167	'yin lei'	'F'	
+100168	'ze he'	'M'	
+100169	'zou le'	'M'	
+100170	'mian fan'	'M'	
+100171	'pao yin'	'F'	
+100172	'kang pi'	'M'	
+100173	'niang wei'	'M'	
+100174	'wan cao'	'M'	
+100175	'chao peng'	'M'	
+100176	'chao zheng'	'M'	
+100177	'jiong luo'	'M'	
+100178	'mao yan'	'M'	
+100179	'tiao he'	'M'	
+100180	'qi wei'	'F'	
+100181	'mao zhao'	'F'	
+100182	'shou yu'	'M'	
+100183	'shua tang'	'M'	
+100184	'pu lei'	'M'	
+100185	'nv tang'	'F'	
+100186	'fan qi'	'F'	
+100187	'juan feng'	'F'	
+100188	'mo xie'	'F'	
+100189	'qi ren'	'F'	
+100190	'ruan meng'	'M'	
+100191	'dan yin'	'F'	
+100192	'fen bian'	'F'	
+100193	'ceng qian'	'M'	
+100194	'meng su'	'M'	
+100195	'bu zhao'	'M'	
+100196	'shan bai'	'F'	
+100197	'bin qi'	'M'	
+100198	'ju wu'	'F'	
+100199	'pao pan'	'M'	
+100200	'chuang chang'	'F'	
+100201	'er li'	'M'	
+100202	'seng jiang'	'M'	
+100203	'chou kong'	'F'	
+100204	'jia cen'	'M'	
+100205	'min chang'	'F'	
+100206	'qing luo'	'M'	
+100207	'zao qian'	'F'	
+100208	'fan lv'	'F'	
+100209	'zun ren'	'M'	
+100210	'neng lian'	'M'	
+100211	'she xi'	'F'	
+100212	'zhong wei'	'F'	
+100213	'gui yin'	'M'	
+100214	'shuai shi'	'F'	
+100215	'duan wu'	'M'	
+100216	'zhua yu'	'F'	
+100217	'mian wei'	'M'	
+100218	'lou liu'	'M'	
+100219	'duo xu'	'F'	
+100220	'chen hao'	'M'	
+100221	'pie yu'	'M'	
+100222	'hen yuan'	'M'	
+100223	'yue chu'	'M'	
+100224	'jin he'	'M'	
+100225	'da lang'	'F'	
+100226	'sou cao'	'F'	
+100227	'rong teng'	'M'	
+100228	'bao peng'	'M'	
+100229	'zeng yun'	'M'	
+100230	'nuo ren'	'F'	
+100231	'ti zhu'	'M'	
+100232	'nu chang'	'F'	
+100233	'hai shi'	'M'	
+100234	'ru yuan'	'F'	
+100235	'dong lu'	'M'	
+100236	'nong zhang'	'M'	
+100237	'qiu wang'	'M'	
+100238	'yao yu'	'F'	
+100239	'piao tao'	'M'	
+100240	'gen he'	'M'	
+100241	'qiao qi'	'F'	
+100242	'tao zhou'	'F'	
+100243	'shun xie'	'F'	
+100244	'nian fan'	'F'	
+100245	'nang kong'	'M'	
+100246	'duo dou'	'F'	
+100247	'tuo wei'	'M'	
+100248	'du yang'	'F'	
+100249	'yi he'	'M'	
+100250	'jiao sun'	'F'	
+100251	'yong he'	'M'	
+100252	'shen xi'	'M'	
+100253	'pi qi'	'M'	
+100254	'gen zhang'	'M'	
+100255	'ku bian'	'M'	
+100256	'zhui zhang'	'M'	
+100257	'gou zhao'	'M'	
+100258	'wa gu'	'M'	
+100259	'kao he'	'M'	
+100260	'shi qi'	'F'	
+100261	'yu ju'	'M'	
+100262	'ti hua'	'M'	
+100263	'nian huang'	'F'	
+100264	'ma zheng'	'F'	
+100265	'mo zhu'	'F'	
+100266	'chuai bi'	'M'	
+100267	'wen chen'	'F'	
+100268	'che bai'	'F'	
+100269	'dao li'	'M'	
+100270	'sao feng'	'F'	
+100271	'beng fu'	'M'	
+100272	'hou lei'	'F'	
+100273	'dao chang'	'F'	
+100274	'lao lang'	'M'	
+100275	'sa qin'	'F'	
+100276	'tan wang'	'M'	
+100277	'can hua'	'M'	
+100278	'po wu'	'F'	
+100279	'sen xi'	'F'	
+100280	'wen he'	'M'	
+100281	'zhai yan'	'F'	
+100282	'di pan'	'M'	
+100283	'yu wu'	'F'	
+100284	'en cen'	'M'	
+100285	'cheng yuan'	'F'	
+100286	'yue yang'	'M'	
+100287	'xin xiao'	'M'	
+100288	'pi yuan'	'F'	
+100289	'cha wang'	'M'	
+100290	'xu he'	'M'	
+100291	'dai feng'	'F'	
+100292	'pian teng'	'F'	
+100293	'lv bi'	'F'	
+100294	'liu tang'	'M'	
+100295	'biao xue'	'M'	
+100296	'suan jiang'	'M'	
+100297	'ha wu'	'M'	
+100298	'kui kang'	'F'	
+100299	'tuan ping'	'F'	
+100300	'ruo yu'	'F'	
+100301	'ei zhu'	'M'	
+100302	'bei chu'	'F'	
+100303	'en ju'	'M'	
+100304	'she feng'	'M'	
+100305	'shen tang'	'M'	
+100306	'tun pan'	'M'	
+100307	'hua peng'	'M'	
+100308	'jiao han'	'F'	
+100309	'nao miao'	'M'	
+100310	'lue bao'	'F'	
+100311	'di fan'	'F'	
+100312	'wo qi'	'F'	
+100313	'kui qian'	'F'	
+100314	'guo hua'	'F'	
+100315	'zang gu'	'M'	
+100316	'xi he'	'M'	
+100317	'lan xue'	'M'	
+100318	'zei yang'	'F'	
+100319	'biao xi'	'F'	
+100320	'qin he'	'M'	
+100321	'mou ren'	'F'	
+100322	'm you'	'F'	
+100323	'mai feng'	'M'	
+100324	'qiong wu'	'F'	
+100325	'tian feng'	'F'	
+100326	'jian wei'	'F'	
+100327	'seng liu'	'F'	
+100328	'kao zhao'	'M'	
+100329	'bo xu'	'M'	
+100330	'nei ju'	'M'	
+100331	'shuang yu'	'M'	
+100332	'reng li'	'F'	
+100333	'bing yin'	'M'	
+100334	'shai fan'	'M'	
+100335	'bei yang'	'F'	
+100336	'tao fan'	'F'	
+100337	'mou lu'	'M'	
+100338	'tang xie'	'F'	
+100339	'liu qin'	'M'	
+100340	'chen lian'	'F'	
+100341	'chun shen'	'M'	
+100342	'mei chen'	'F'	
+100343	'tou he'	'F'	
+100344	'lian ren'	'F'	
+100345	'lang yuan'	'F'	
+100346	'chang sun'	'F'	
+100347	'pian chang'	'F'	
+100348	'zhuo qian'	'F'	
+100349	'kuan wu'	'M'	
+100350	'bi chang'	'M'	
+100351	'ba qin'	'M'	
+100352	'da an'	'F'	
+100353	'hu pan'	'F'	
+100354	'shai bu'	'M'	
+100355	'dun yang'	'F'	
+100356	'mou bu'	'F'	
+100357	'jiao wu'	'F'	
+100358	'shao huang'	'F'	
+100359	'nian wei'	'M'	
+100360	'heng hua'	'M'	
+100361	'leng xi'	'M'	
+100362	'miu jiang'	'M'	
+100363	'que fei'	'F'	
+100364	'zhai qin'	'F'	
+100365	'kun xue'	'M'	
+100366	'pao qian'	'F'	
+100367	'chuai qin'	'F'	
+100368	'san lian'	'F'	
+100369	'suo shi'	'M'	
+100370	'ruo wu'	'F'	
+100371	'tuo tao'	'F'	
+100372	'ga fei'	'F'	
+100373	'qia lei'	'M'	
+100374	'chan liu'	'M'	
+100375	'zei chang'	'M'	
+100376	'run wang'	'M'	
+100377	'tang le'	'F'	
+100378	'he su'	'F'	
+100379	'qi lu'	'M'	
+100380	'ba yan'	'M'	
+100381	'wan shi'	'M'	
+100382	'bo qin'	'M'	
+100383	'ping wei'	'M'	
+100384	'mao bai'	'F'	
+100385	'cun lv'	'F'	
+100386	'fa wei'	'F'	
+100387	'en yang'	'M'	
+100388	'fang he'	'F'	
+100389	'hou chang'	'F'	
+100390	'lei pan'	'M'	
+100391	'nan fei'	'F'	
+100392	'yan ni'	'F'	
+100393	'miu xi'	'M'	
+100394	'de su'	'F'	
+100395	'die feng'	'M'	
+100396	'ken xue'	'F'	
+100397	'cuan zhou'	'M'	
+100398	'bi jiang'	'F'	
+100399	'che yu'	'M'	
+100400	'zhan tang'	'F'	
+100401	'nu qi'	'M'	
+100402	'nie ma'	'F'	
+100403	'chan su'	'F'	
+100404	'nian xi'	'F'	
+100405	'xue miao'	'M'	
+100406	'zei jiang'	'F'	
+100407	'zao ma'	'F'	
+100408	'lang hao'	'M'	
+100409	'run gu'	'F'	
+100410	'xin meng'	'F'	
+100411	'heng kong'	'M'	
+100412	'luan su'	'M'	
+100413	'si meng'	'M'	
+100414	'chuai kang'	'F'	
+100415	'tie he'	'M'	
+100416	'qun shi'	'M'	
+100417	'shuo lang'	'M'	
+100418	'yi cen'	'M'	
+100419	'jie shi'	'M'	
+100420	'gen wei'	'F'	
+100421	'zang lian'	'F'	
+100422	'kuang xiao'	'M'	
+100423	'niang wu'	'F'	
+100424	'jiong shi'	'F'	
+100425	'sen fan'	'M'	
+100426	'miao zheng'	'M'	
+100427	'deng su'	'M'	
+100428	'piao wei'	'F'	
+100429	'zeng cen'	'F'	
+100430	'rong kang'	'F'	
+100431	'ba fan'	'M'	
+100432	'hai you'	'M'	
+100433	'piao tang'	'M'	
+100434	'kuai chu'	'F'	
+100435	'yong zheng'	'M'	
+100436	'pan li'	'M'	
+100437	'xuan yan'	'F'	
+100438	'tan kang'	'F'	
+100439	'wang peng'	'F'	
+100440	'kua jin'	'M'	
+100441	'ben chu'	'M'	
+100442	'dan ju'	'F'	
+100443	'wo bi'	'F'	
+100444	'ning shen'	'M'	
+100445	'o tao'	'M'	
+100446	'seng wei'	'F'	
+100447	'yi bu'	'F'	
+100448	'shuan he'	'M'	
+100449	'ning zhao'	'F'	
+100450	'mi he'	'F'	
+100451	'rong shi'	'F'	
+100452	'gao zhu'	'F'	
+100453	'xiang luo'	'F'	
+100454	'deng you'	'M'	
+100455	'mai xiao'	'M'	
+100456	'hua sun'	'M'	
+100457	'dao feng'	'F'	
+100458	'luo wu'	'F'	
+100459	'ba fu'	'M'	
+100460	'kao wu'	'M'	
+100461	'pin li'	'F'	
+100462	'diao zhao'	'M'	
+100463	'cuan ge'	'M'	
+100464	'kang tang'	'F'	
+100465	'ba ping'	'F'	
+100466	'duan wei'	'M'	
+100467	'shu he'	'F'	
+100468	'jiang fei'	'M'	
+100469	'chang teng'	'F'	
+100470	'di wei'	'M'	
+100471	'ai fu'	'M'	
+100472	'yi ma'	'F'	
+100473	'yu yu'	'M'	
+100474	'cen he'	'F'	
+100475	'ceng meng'	'F'	
+100476	'pan luo'	'M'	
+100477	'kuan yu'	'F'	
+100478	'tong liu'	'M'	
+100479	'men pan'	'F'	
+100480	'zang wu'	'F'	
+100481	'nuan fu'	'F'	
+100482	'longg shui'	'M'	
+100483	'biao bao'	'M'	
+100484	'mi lu'	'F'	
+100485	'she fang'	'M'	
+100486	'ha zheng'	'F'	
+100487	'yi gu'	'F'	
+100488	'dan zhu'	'F'	
+100489	'pa wu'	'M'	
+100490	'wu yu'	'F'	
+100491	'kong yuan'	'F'	
+100492	'qia yang'	'F'	
+100493	'nou shen'	'F'	
+100494	'pai zhang'	'M'	
+100495	'zun ge'	'F'	
+100496	'zi mu'	'F'	
+100497	'niang bu'	'M'	
+100498	'che he'	'M'	
+100499	'jiao qi'	'M'	
+100500	'gan qi'	'F'	
+100501	'chi qi'	'M'	
+100502	'nie meng'	'F'	
+100503	'nie chu'	'M'	
+100504	'pu zhu'	'M'	
+100505	'hun an'	'F'	
+100506	'biao li'	'F'	
+100507	'xiu chu'	'F'	
+100508	'xing chen'	'M'	
+100509	'biao li'	'M'	
+100510	'liu jiang'	'F'	
+100511	'zhuan jiang'	'F'	
+100512	'rui ni'	'F'	
+100513	'shun he'	'M'	
+100514	'ru jin'	'M'	
+100515	'e ren'	'F'	
+100516	'peng shi'	'F'	
+100517	'xing an'	'M'	
+100518	'long fu'	'F'	
+100519	'han yuan'	'M'	
+100520	'gu an'	'F'	
+100521	'mie zhao'	'F'	
+100522	'zi kong'	'M'	
+100523	'pi dou'	'M'	
+100524	'yu sun'	'M'	
+100525	'cha bi'	'M'	
+100526	'sa hua'	'M'	
+100527	'zhan jiang'	'M'	
+100528	'shua sun'	'F'	
+100529	'yin jiang'	'M'	
+100530	'mi fu'	'F'	
+100531	'lue qian'	'M'	
+100532	'qu yu'	'M'	
+100533	'du lu'	'M'	
+100534	'du gu'	'F'	
+100535	'gong fei'	'M'	
+100536	'cuo qi'	'M'	
+100537	'yi shui'	'F'	
+100538	'zai yu'	'M'	
+100539	'zu ju'	'F'	
+100540	'yi cao'	'M'	
+100541	'zhui zhang'	'M'	
+100542	'pen bai'	'M'	
+100543	'na wu'	'F'	
+100544	'li chang'	'M'	
+100545	'jin han'	'F'	
+100546	'zhai lei'	'F'	
+100547	'nang miao'	'M'	
+100548	'pin xiao'	'F'	
+100549	'pi yu'	'F'	
+100550	'bei qian'	'M'	
+100551	'yu qian'	'M'	
+100552	'han qian'	'F'	
+100553	'en yin'	'M'	
+100554	'yu lei'	'M'	
+100555	'luo fang'	'F'	
+100556	'zun teng'	'F'	
+100557	'min cao'	'F'	
+100558	'nong fan'	'M'	
+100559	'sang ping'	'F'	
+100560	'za zhao'	'M'	
+100561	'zheng wei'	'F'	
+100562	'cao yan'	'M'	
+100563	'pen fan'	'M'	
+100564	'ping dou'	'M'	
+100565	'pang chu'	'M'	
+100566	'ping bian'	'M'	
+100567	'sen feng'	'M'	
+100568	'die tang'	'F'	
+100569	'gong he'	'F'	
+100570	'hong shen'	'M'	
+100571	'ga he'	'F'	
+100572	'jin ju'	'F'	
+100573	'nao hao'	'M'	
+100574	'dan feng'	'F'	
+100575	'yu qin'	'M'	
+100576	'tuo kong'	'F'	
+100577	'en lv'	'F'	
+100578	'tuo jiang'	'F'	
+100579	'feng jiang'	'M'	
+100580	'jiao qin'	'F'	
+100581	'jiao fu'	'M'	
+100582	'gou liu'	'F'	
+100583	'deng gu'	'F'	
+100584	'suo su'	'M'	
+100585	'hei he'	'M'	
+100586	'shu zhou'	'M'	
+100587	'shu kong'	'M'	
+100588	'chen lv'	'F'	
+100589	'ke he'	'M'	
+100590	'lin wu'	'F'	
+100591	'gui shi'	'M'	
+100592	'zhui feng'	'F'	
+100593	'shi yu'	'F'	
+100594	'zang bao'	'M'	
+100595	'shuai zhou'	'M'	
+100596	'zei yu'	'F'	
+100597	'sou su'	'M'	
+100598	'si he'	'M'	
+100599	'shao fu'	'M'	
+100600	'jin qin'	'M'	
+100601	'heng yu'	'M'	
+100602	'he yin'	'F'	
+100603	'nian luo'	'F'	
+100604	'tan fei'	'F'	
+100605	'lue teng'	'M'	
+100606	'ang xi'	'M'	
+100607	'cha yu'	'M'	
+100608	'dun fei'	'F'	
+100609	'ping jiang'	'M'	
+100610	'ti jin'	'M'	
+100611	'ceng tao'	'F'	
+100612	'jia yuan'	'M'	
+100613	'nan he'	'F'	
+100614	'dui lv'	'M'	
+100615	'feng wang'	'M'	
+100616	'jiao yin'	'F'	
+100617	'pin chang'	'M'	
+100618	'gui yan'	'F'	
+100619	'chun zhang'	'M'	
+100620	'guai shi'	'M'	
+100621	'suo peng'	'M'	
+100622	'cha he'	'F'	
+100623	'lue li'	'F'	
+100624	'ran hua'	'F'	
+100625	'she cen'	'F'	
+100626	'niu le'	'M'	
+100627	'zhu he'	'F'	
+100628	'kun pi'	'M'	
+100629	'wan shui'	'M'	
+100630	'fen yin'	'M'	
+100631	'kuo mu'	'M'	
+100632	'kao bao'	'F'	
+100633	'pu lang'	'F'	
+100634	'nian ma'	'M'	
+100635	'guai yin'	'F'	
+100636	'yin he'	'F'	
+100637	'ta pan'	'F'	
+100638	'shi fu'	'M'	
+100639	'shang qin'	'F'	
+100640	'yo yu'	'M'	
+100641	'te he'	'M'	
+100642	'bai pan'	'M'	
+100643	'tou fan'	'F'	
+100644	'shu wei'	'M'	
+100645	'zuo fan'	'F'	
+100646	'qian su'	'M'	
+100647	'che yang'	'M'	
+100648	'bie hua'	'F'	
+100649	'yang lv'	'M'	
+100650	'te xu'	'M'	
+100651	'sang an'	'M'	
+100652	'dai luo'	'F'	
+100653	'neng yu'	'F'	
+100654	'pao yun'	'F'	
+100655	'cuan zheng'	'F'	
+100656	'xiang you'	'M'	
+100657	'lan su'	'F'	
+100658	'cai yu'	'F'	
+100659	'sa zhang'	'F'	
+100660	'gou ping'	'M'	
+100661	'ni wang'	'F'	
+100662	'qian lu'	'M'	
+100663	'gu kong'	'M'	
+100664	'lue gu'	'M'	
+100665	'ruan qi'	'M'	
+100666	'gao yang'	'M'	
+100667	'huai tao'	'M'	
+100668	'zhong meng'	'M'	
+100669	'nin xu'	'M'	
+100670	'shao qi'	'M'	
+100671	'jia he'	'M'	
+100672	'di shen'	'F'	
+100673	'hei chang'	'M'	
+100674	'ban zhang'	'F'	
+100675	'xie wei'	'M'	
+100676	'yi qi'	'F'	
+100677	'zhan feng'	'M'	
+100678	'gao hao'	'F'	
+100679	'nen fei'	'F'	
+100680	'mai bian'	'M'	
+100681	'zhai liu'	'M'	
+100682	'zhai jin'	'M'	
+100683	'bei jiang'	'M'	
+100684	'tuan bian'	'F'	
+100685	'lan teng'	'M'	
+100686	'mi le'	'F'	
+100687	'jing shi'	'M'	
+100688	'ban chang'	'M'	
+100689	'yao yuan'	'M'	
+100690	'wan huang'	'F'	
+100691	'cheng jiang'	'F'	
+100692	'nei teng'	'F'	
+100693	'le shen'	'F'	
+100694	'en wang'	'M'	
+100695	'nao yuan'	'M'	
+100696	'gang chu'	'F'	
+100697	'pen zhang'	'M'	
+100698	'chou lei'	'M'	
+100699	'pian he'	'M'	
+100700	'chuai li'	'M'	
+100701	'man xie'	'M'	
+100702	'cheng lei'	'F'	
+100703	'jia chang'	'M'	
+100704	'fang shen'	'F'	
+100705	'gui shen'	'M'	
+100706	'miu tao'	'M'	
+100707	'biao tao'	'M'	
+100708	'ku shi'	'F'	
+100709	'zuo zhang'	'M'	
+100710	'ao lei'	'F'	
+100711	'ca xi'	'F'	
+100712	'zhan feng'	'F'	
+100713	'fou wu'	'F'	
+100714	'dou tang'	'M'	
+100715	'xiao yun'	'F'	
+100716	'long fu'	'F'	
+100717	'pai ge'	'M'	
+100718	'ka yu'	'F'	
+100719	'mu hua'	'F'	
+100720	'ca tang'	'F'	
+100721	'pian you'	'F'	
+100722	'chao tao'	'M'	
+100723	'niang meng'	'M'	
+100724	'mu bi'	'F'	
+100725	'tong chen'	'F'	
+100726	'xing wei'	'F'	
+100727	'tiao liu'	'M'	
+100728	'tang zhang'	'M'	
+100729	'guai li'	'F'	
+100730	'gui chang'	'F'	
+100731	'mei qi'	'F'	
+100732	'shan bu'	'M'	
+100733	'nao ni'	'F'	
+100734	'cuo yan'	'M'	
+100735	'shi wang'	'F'	
+100736	'bao zhou'	'M'	
+100737	'rou yuan'	'F'	
+100738	'bi wang'	'F'	
+100739	'dao meng'	'F'	
+100740	'lang miao'	'M'	
+100741	'pie xi'	'F'	
+100742	'cheng he'	'F'	
+100743	'tuo xie'	'M'	
+100744	'ren xue'	'F'	
+100745	'dan qin'	'F'	
+100746	'tie zheng'	'M'	
+100747	'dui xiao'	'F'	
+100748	'shang feng'	'M'	
+100749	'ma han'	'M'	
+100750	'sui feng'	'M'	
+100751	'nie pan'	'M'	
+100752	'zhe he'	'F'	
+100753	'jiao xi'	'F'	
+100754	'er an'	'M'	
+100755	'zha shen'	'M'	
+100756	'shang lv'	'M'	
+100757	'xia yan'	'M'	
+100758	'fou chu'	'M'	
+100759	'nu chen'	'M'	
+100760	'qia wang'	'M'	
+100761	'man hua'	'M'	
+100762	'hang shi'	'M'	
+100763	'cang tao'	'F'	
+100764	'pang fei'	'M'	
+100765	'shao kong'	'F'	
+100766	'peng wei'	'M'	
+100767	'cun wu'	'M'	
+100768	'sen lu'	'M'	
+100769	'hou yin'	'M'	
+100770	'cu xiao'	'M'	
+100771	'yu xu'	'M'	
+100772	'guang le'	'F'	
+100773	'zhuo chen'	'M'	
+100774	'lang chu'	'F'	
+100775	'ha chang'	'F'	
+100776	'nu miao'	'F'	
+100777	'xian chu'	'M'	
+100778	'ce xu'	'F'	
+100779	'bao he'	'M'	
+100780	'zheng shi'	'F'	
+100781	'pai bian'	'M'	
+100782	'pen wu'	'M'	
+100783	'chang chu'	'F'	
+100784	'ai an'	'M'	
+100785	'lou sun'	'F'	
+100786	'ju he'	'F'	
+100787	'ting jiang'	'M'	
+100788	'bi hao'	'M'	
+100789	'ya fang'	'M'	
+100790	'jiu wei'	'F'	
+100791	'bing wang'	'F'	
+100792	'xun he'	'F'	
+100793	'yun qi'	'F'	
+100794	'yin xue'	'M'	
+100795	'tu yu'	'F'	
+100796	'jun han'	'M'	
+100797	'sa wu'	'F'	
+100798	'zi zhao'	'M'	
+100799	'pi qian'	'F'	
+100800	'shuai chang'	'M'	
+100801	'yi wang'	'M'	
+100802	'kuang dou'	'M'	
+100803	'lin xiao'	'M'	
+100804	'bao ge'	'M'	
+100805	'qing qian'	'M'	
+100806	'ca gu'	'F'	
+100807	'ci chen'	'M'	
+100808	'ning he'	'M'	
+100809	'liu peng'	'F'	
+100810	'xin pi'	'F'	
+100811	'nou fan'	'M'	
+100812	'pen chang'	'F'	
+100813	'shou feng'	'F'	
+100814	'ping wei'	'M'	
+100815	'chi gu'	'F'	
+100816	'nie zhang'	'F'	
+100817	'guan chen'	'F'	
+100818	'zhi zhu'	'F'	
+100819	'xiu wei'	'M'	
+100820	'si bu'	'M'	
+100821	'ben yin'	'F'	
+100822	'zhen yang'	'M'	
+100823	'nin you'	'M'	
+100824	'san shi'	'M'	
+100825	'xie bi'	'M'	
+100826	'bang pi'	'M'	
+100827	'bai kang'	'F'	
+100828	'wa wei'	'F'	
+100829	'jiao kong'	'M'	
+100830	'hu fei'	'F'	
+100831	'gong wei'	'M'	
+100832	'chang ju'	'M'	
+100833	'pin xu'	'M'	
+100834	'shen feng'	'F'	
+100835	'nang lei'	'F'	
+100836	'ye yun'	'M'	
+100837	'jia yun'	'M'	
+100838	'lin wang'	'M'	
+100839	'nu xue'	'M'	
+100840	'dun ge'	'M'	
+100841	'mai yuan'	'M'	
+100842	'tun hua'	'M'	
+100843	'chuo ping'	'F'	
+100844	'zhao xie'	'F'	
+100845	'hai fei'	'F'	
+100846	'gun xiao'	'M'	
+100847	'ruan xue'	'F'	
+100848	'qiu yu'	'M'	
+100849	'cui he'	'M'	
+100850	'wang le'	'F'	
+100851	'si wei'	'F'	
+100852	'nie liu'	'M'	
+100853	'ben zhang'	'F'	
+100854	'nian zhang'	'F'	
+100855	'ni zhao'	'M'	
+100856	'kuan hua'	'F'	
+100857	'qi han'	'F'	
+100858	'que wang'	'M'	
+100859	'duo lu'	'F'	
+100860	'wu chu'	'M'	
+100861	'jiao yu'	'F'	
+100862	'bei he'	'F'	
+100863	'yi le'	'M'	
+100864	'ci fei'	'M'	
+100865	'hao ma'	'M'	
+100866	'tuo yuan'	'M'	
+100867	'die qi'	'F'	
+100868	'zhan bu'	'M'	
+100869	'qing kang'	'F'	
+100870	'tan wu'	'M'	
+100871	'li chang'	'M'	
+100872	'suo yuan'	'M'	
+100873	'cuo su'	'M'	
+100874	'jia luo'	'F'	
+100875	'huang pi'	'F'	
+100876	'pei zhou'	'M'	
+100877	'ou bai'	'F'	
+100878	'mang miao'	'F'	
+100879	'hui feng'	'M'	
+100880	'shuo bao'	'M'	
+100881	'shan fei'	'F'	
+100882	'duo kang'	'F'	
+100883	'nin zhou'	'F'	
+100884	'lou shi'	'M'	
+100885	'le jin'	'F'	
+100886	'tang ren'	'M'	
+100887	'jiao wei'	'F'	
+100888	'gai wei'	'M'	
+100889	'lan wei'	'F'	
+100890	'sao yin'	'F'	
+100891	'dao bai'	'F'	
+100892	'pu pi'	'F'	
+100893	'zai qin'	'F'	
+100894	'hu wang'	'M'	
+100895	'dao zhang'	'M'	
+100896	'weng bi'	'F'	
+100897	'kuai chen'	'M'	
+100898	'gua meng'	'M'	
+100899	'weng miao'	'M'	
+100900	'diao kong'	'M'	
+100901	'zhua zhao'	'F'	
+100902	'peng bian'	'M'	
+100903	'er ren'	'F'	
+100904	'tui shen'	'F'	
+100905	'zou he'	'M'	
+100906	'zhai zhou'	'F'	
+100907	'chen wang'	'M'	
+100908	'fan xiao'	'M'	
+100909	'kang yun'	'F'	
+100910	'ze ni'	'M'	
+100911	'zuo chen'	'M'	
+100912	'ren zhang'	'M'	
+100913	'lou shui'	'F'	
+100914	'nai li'	'F'	
+100915	'ba yuan'	'F'	
+100916	'xu wang'	'F'	
+100917	'ying kang'	'F'	
+100918	'zhuo yan'	'M'	
+100919	'da fei'	'F'	
+100920	'sa zheng'	'F'	
+100921	'hei ping'	'F'	
+100922	'tan wei'	'M'	
+100923	'e zheng'	'M'	
+100924	'lou wang'	'M'	
+100925	'cha pan'	'M'	
+100926	'ruo yuan'	'M'	
+100927	'kan lv'	'F'	
+100928	'tai bao'	'M'	
+100929	'hui wei'	'F'	
+100930	'qian shi'	'M'	
+100931	'cuan ju'	'F'	
+100932	'ban zhu'	'M'	
+100933	'ou cao'	'M'	
+100934	'shen chen'	'F'	
+100935	'fa yu'	'F'	
+100936	'ha shi'	'F'	
+100937	'jia liu'	'F'	
+100938	'qian lei'	'M'	
+100939	'tuo han'	'F'	
+100940	'mian teng'	'F'	
+100941	'da zhao'	'M'	
+100942	'ran han'	'F'	
+100943	'wang he'	'M'	
+100944	'nen zhang'	'M'	
+100945	'mu sun'	'M'	
+100946	'fen an'	'F'	
+100947	'ti bian'	'M'	
+100948	'yin fang'	'M'	
+100949	'pin tang'	'F'	
+100950	'pei chang'	'F'	
+100951	'ke cao'	'F'	
+100952	'nin tao'	'M'	
+100953	'ceng ni'	'M'	
+100954	'cou cao'	'M'	
+100955	'fu yu'	'M'	
+100956	'jiong xue'	'M'	
+100957	'le luo'	'M'	
+100958	'zeng xie'	'M'	
+100959	'ri luo'	'M'	
+100960	'qin tang'	'M'	
+100961	'xian xi'	'M'	
+100962	'run mu'	'F'	
+100963	'du lei'	'F'	
+100964	'yi yan'	'F'	
+100965	'hou shen'	'M'	
+100966	'guai he'	'F'	
+100967	'te yu'	'M'	
+100968	'sheng kang'	'F'	
+100969	'dai chu'	'F'	
+100970	'chao yu'	'F'	
+100971	'bang tang'	'F'	
+100972	'neng jin'	'F'	
+100973	'cui hao'	'M'	
+100974	'nou lei'	'M'	
+100975	'mo chen'	'M'	
+100976	'zuo xie'	'F'	
+100977	'han he'	'F'	
+100978	'zheng qi'	'F'	
+100979	'fei huang'	'F'	
+100980	'tu ge'	'F'	
+100981	'tuo zhang'	'F'	
+100982	'jiao kong'	'M'	
+100983	'biao jiang'	'F'	
+100984	'm xiao'	'M'	
+100985	'bei he'	'M'	
+100986	'jiao feng'	'M'	
+100987	'chao jiang'	'F'	
+100988	'shua mu'	'F'	
+100989	'nu pi'	'M'	
+100990	'zha hua'	'M'	
+100991	'xiang tang'	'F'	
+100992	'kong wei'	'M'	
+100993	'ha cen'	'M'	
+100994	'yun ping'	'F'	
+100995	'lv ni'	'M'	
+100996	'chen ping'	'F'	
+100997	'ting le'	'M'	
+100998	'qin hua'	'M'	
+100999	'jun yu'	'M'	
+101000	'mao yin'	'F'	
+101001	'wo he'	'F'	
+101002	'bei xu'	'F'	
+101003	'heng fei'	'F'	
+101004	'mai lu'	'F'	
+101005	'shai su'	'M'	
+101006	'ha tang'	'F'	
+101007	'men bai'	'M'	
+101008	'hou zhu'	'M'	
+101009	'kao yin'	'F'	
+101010	'cheng zheng'	'F'	
+101011	'wai shi'	'M'	
+101012	'shuan wu'	'F'	
+101013	'chai chang'	'M'	
+101014	'kui shui'	'M'	
+101015	'reng zheng'	'F'	
+101016	'che fu'	'F'	
+101017	'tai zhang'	'M'	
+101018	'gang hua'	'M'	
+101019	'wai hao'	'M'	
+101020	'yun zhu'	'F'	
+101021	'miao zhu'	'M'	
+101022	'di wu'	'M'	
+101023	'rang ma'	'M'	
+101024	'tan bi'	'M'	
+101025	'ga fu'	'M'	
+101026	'nei yuan'	'F'	
+101027	'zhuan yu'	'M'	
+101028	'ai wu'	'M'	
+101029	'song you'	'M'	
+101030	'duo hao'	'F'	
+101031	'zhui peng'	'F'	
+101032	'pa pi'	'F'	
+101033	'nu yan'	'F'	
+101034	'longg jin'	'M'	
+101035	'zhuan wei'	'M'	
+101036	'yo kong'	'F'	
+101037	'kan qian'	'F'	
+101038	'pa lu'	'M'	
+101039	'gun zhang'	'F'	
+101040	'tuo shen'	'F'	
+101041	'nao ping'	'F'	
+101042	'te lian'	'F'	
+101043	'dun li'	'F'	
+101044	'zu hua'	'M'	
+101045	'di yin'	'M'	
+101046	'nu lu'	'F'	
+101047	'neng li'	'M'	
+101048	'yue fei'	'F'	
+101049	'nao miao'	'F'	
+101050	'ran miao'	'F'	
+101051	'chuan han'	'M'	
+101052	'die feng'	'F'	
+101053	'liang qi'	'M'	
+101054	'cang yu'	'F'	
+101055	'ming zhang'	'M'	
+101056	'ne qi'	'M'	
+101057	'ta hua'	'F'	
+101058	'shang tang'	'M'	
+101059	'nai lian'	'M'	
+101060	'gen shui'	'M'	
+101061	'gui wei'	'M'	
+101062	'rang sun'	'F'	
+101063	'en yang'	'M'	
+101064	'zou ma'	'M'	
+101065	'qu bu'	'M'	
+101066	'gou wei'	'M'	
+101067	'biao sun'	'M'	
+101068	'chuang chu'	'M'	
+101069	'ku shi'	'M'	
+101070	'mei an'	'F'	
+101071	'zhua zhu'	'F'	
+101072	'kuai jin'	'M'	
+101073	'ya shi'	'M'	
+101074	'sheng qin'	'F'	
+101075	'ei han'	'F'	
+101076	'fan bi'	'F'	
+101077	'zeng wu'	'F'	
+101078	'bi shi'	'F'	
+101079	'bie cen'	'M'	
+101080	'nv lang'	'M'	
+101081	'mi wei'	'F'	
+101082	'gu tao'	'M'	
+101083	'qi ge'	'M'	
+101084	'die an'	'F'	
+101085	'tiao sun'	'M'	
+101086	'xi tao'	'M'	
+101087	'de peng'	'M'	
+101088	'en ren'	'M'	
+101089	'qi gu'	'F'	
+101090	'nu sun'	'F'	
+101091	'xiao hua'	'F'	
+101092	'yue yu'	'F'	
+101093	'nu chang'	'M'	
+101094	'lian zhou'	'M'	
+101095	'zhu bai'	'M'	
+101096	'niu lang'	'F'	
+101097	'en zhao'	'M'	
+101098	'juan qin'	'M'	
+101099	'shai ju'	'M'	
+101100	'bi hao'	'M'	
+101101	'jin yu'	'F'	
+101102	'cang zheng'	'F'	
+101103	'jing an'	'F'	
+101104	'rong jin'	'F'	
+101105	'dia li'	'F'	
+101106	'chen yin'	'M'	
+101107	'qu hua'	'F'	
+101108	'ping yu'	'F'	
+101109	'neng lang'	'M'	
+101110	'jiao kang'	'F'	
+101111	'gui liu'	'M'	
+101112	'chuan shi'	'M'	
+101113	'zhou zhang'	'M'	
+101114	'zhen lian'	'M'	
+101115	'luo yang'	'F'	
+101116	'tu wu'	'M'	
+101117	'ma jin'	'F'	
+101118	'en ju'	'F'	
+101119	'xiong qian'	'M'	
+101120	'gu shi'	'M'	
+101121	'qun pi'	'F'	
+101122	'kuang ma'	'M'	
+101123	'chan miao'	'M'	
+101124	'lang dou'	'F'	
+101125	'lang xu'	'M'	
+101126	'kuai liu'	'M'	
+101127	'gen cen'	'M'	
+101128	'pei yu'	'M'	
+101129	'tu lian'	'F'	
+101130	'zou yu'	'F'	
+101131	'bei liu'	'M'	
+101132	'hei qian'	'F'	
+101133	'feng le'	'F'	
+101134	'chuan yun'	'F'	
+101135	'kuan an'	'F'	
+101136	'hei tang'	'M'	
+101137	'suo he'	'F'	
+101138	'cheng wu'	'M'	
+101139	'nin an'	'M'	
+101140	'ba wang'	'M'	
+101141	'zi yu'	'M'	
+101142	'hei su'	'F'	
+101143	'wo li'	'M'	
+101144	'hang yuan'	'F'	
+101145	'jiao tao'	'F'	
+101146	'chuai bian'	'F'	
+101147	'ruo zheng'	'F'	
+101148	'chen wu'	'F'	
+101149	'pin he'	'M'	
+101150	'ba xiao'	'F'	
+101151	'zou tang'	'M'	
+101152	'diu huang'	'M'	
+101153	'tong yang'	'M'	
+101154	'gang shi'	'F'	
+101155	'tuo zheng'	'M'	
+101156	'hei han'	'M'	
+101157	'yi zheng'	'F'	
+101158	'lan bu'	'F'	
+101159	'en yu'	'F'	
+101160	'fang ni'	'F'	
+101161	'cen qian'	'M'	
+101162	'yun ju'	'F'	
+101163	'tuo meng'	'F'	
+101164	'beng feng'	'M'	
+101165	'she lian'	'F'	
+101166	'ning yu'	'F'	
+101167	'chong xue'	'M'	
+101168	'bu fang'	'F'	
+101169	'pian chu'	'F'	
+101170	'cheng bai'	'M'	
+101171	'jiong fang'	'F'	
+101172	'kuan wei'	'F'	
+101173	'wa ren'	'F'	
+101174	'jiu kang'	'F'	
+101175	'gong meng'	'F'	
+101176	'dai zheng'	'F'	
+101177	'shua su'	'M'	
+101178	'bang bian'	'F'	
+101179	'wai wu'	'F'	
+101180	'yao ma'	'M'	
+101181	'shan qi'	'M'	
+101182	'shang bian'	'F'	
+101183	'liao miao'	'F'	
+101184	'shui fei'	'F'	
+101185	'gen shen'	'F'	
+101186	'pou teng'	'F'	
+101187	'niang yin'	'F'	
+101188	'gen hao'	'F'	
+101189	'dan le'	'M'	
+101190	'kong bi'	'F'	
+101191	'bin qi'	'F'	
+101192	'shao shui'	'F'	
+101193	'biao ni'	'F'	
+101194	'shu shi'	'M'	
+101195	'hai lu'	'F'	
+101196	'lou wei'	'F'	
+101197	'sao ju'	'M'	
+101198	'jiang yu'	'F'	
+101199	'suo shi'	'M'	
+101200	'fou lv'	'M'	
+101201	'yo shen'	'F'	
+101202	'zao he'	'M'	
+101203	'pang ju'	'F'	
+101204	'xie miao'	'M'	
+101205	'ci chu'	'M'	
+101206	'kuo xu'	'M'	
+101207	'nai fan'	'F'	
+101208	'die wei'	'F'	
+101209	'huai zhang'	'M'	
+101210	'qing wang'	'M'	
+101211	'nian qin'	'F'	
+101212	'shuai dou'	'M'	
+101213	'nian su'	'M'	
+101214	'chen xi'	'F'	
+101215	'wu lian'	'F'	
+101216	'dou feng'	'F'	
+101217	'zhuang wu'	'F'	
+101218	'zhou kang'	'F'	
+101219	'gu pi'	'M'	
+101220	'ang xi'	'F'	
+101221	'nuo qin'	'F'	
+101222	'kuai yun'	'M'	
+101223	'qiang zhang'	'M'	
+101224	'niang gu'	'F'	
+101225	'yu qin'	'M'	
+101226	'zhuan chang'	'F'	
+101227	'xia xi'	'M'	
+101228	'lun wu'	'M'	
+101229	'neng miao'	'M'	
+101230	'kuai yin'	'F'	
+101231	'zheng yuan'	'M'	
+101232	'jiong zhao'	'M'	
+101233	'hong fei'	'M'	
+101234	'ge fei'	'F'	
+101235	'sai chang'	'M'	
+101236	'ding luo'	'F'	
+101237	'zao miao'	'F'	
+101238	'die shen'	'M'	
+101239	'men zhou'	'F'	
+101240	'bing you'	'M'	
+101241	'sui cen'	'M'	
+101242	'hong dou'	'M'	
+101243	'ga feng'	'M'	
+101244	'tiao han'	'M'	
+101245	'xia xi'	'F'	
+101246	'te chang'	'M'	
+101247	'zhuan wei'	'M'	
+101248	'cai yun'	'F'	
+101249	'pian mu'	'F'	
+101250	'zhao le'	'M'	
+101251	'run fan'	'F'	
+101252	'tuo yuan'	'M'	
+101253	'cao lv'	'F'	
+101254	'cheng lian'	'F'	
+101255	'wen luo'	'M'	
+101256	'shuai wu'	'M'	
+101257	'qian lv'	'F'	
+101258	'tuo wu'	'M'	
+101259	'pan lv'	'F'	
+101260	'zhuo luo'	'M'	
+101261	'chen qin'	'M'	
+101262	'dai kong'	'M'	
+101263	'zang tang'	'F'	
+101264	'kou han'	'M'	
+101265	'jiao lu'	'F'	
+101266	'tang ge'	'F'	
+101267	'rou feng'	'M'	
+101268	'zhuang yuan'	'F'	
+101269	'jun bu'	'M'	
+101270	'ri shi'	'F'	
+101271	'gang an'	'F'	
+101272	'xian pan'	'F'	
+101273	'kuo yan'	'M'	
+101274	'ka shi'	'M'	
+101275	'nao yu'	'M'	
+101276	'tai li'	'M'	
+101277	'ai mu'	'M'	
+101278	'lao kong'	'F'	
+101279	'bei jin'	'F'	
+101280	'guo fei'	'M'	
+101281	'tie yuan'	'M'	
+101282	'en gu'	'F'	
+101283	'xu ping'	'M'	
+101284	'suan bu'	'M'	
+101285	'wu wu'	'M'	
+101286	'kong huang'	'F'	
+101287	'jiao you'	'M'	
+101288	'cu wu'	'F'	
+101289	'die xi'	'M'	
+101290	'lao jiang'	'F'	
+101291	'zhe ni'	'M'	
+101292	'zuo hao'	'M'	
+101293	'suo kang'	'F'	
+101294	'lan xie'	'M'	
+101295	'shui luo'	'F'	
+101296	'yo qian'	'F'	
+101297	'hao miao'	'F'	
+101298	'gou yang'	'F'	
+101299	'xia peng'	'M'	
+101300	'chun qian'	'F'	
+101301	'sun lei'	'F'	
+101302	'shao peng'	'F'	
+101303	'liu bian'	'M'	
+101304	'chuai yu'	'F'	
+101305	'cui su'	'F'	
+101306	'xin yin'	'M'	
+101307	'luo qin'	'M'	
+101308	'ne yan'	'M'	
+101309	'yan bai'	'M'	
+101310	'jun qin'	'F'	
+101311	'zeng jiang'	'M'	
+101312	'lan jin'	'F'	
+101313	'wan xue'	'F'	
+101314	'sa yu'	'M'	
+101315	'tiao ge'	'M'	
+101316	'pie zheng'	'F'	
+101317	'gun zhang'	'M'	
+101318	'me meng'	'M'	
+101319	'jun tang'	'M'	
+101320	'xu xue'	'M'	
+101321	'tie yuan'	'M'	
+101322	'bi kong'	'F'	
+101323	'bian lian'	'M'	
+101324	'quan xi'	'F'	
+101325	'zuo yin'	'F'	
+101326	'keng teng'	'M'	
+101327	'qu peng'	'M'	
+101328	'ku cen'	'M'	
+101329	'kun yan'	'F'	
+101330	'ceng wang'	'M'	
+101331	'sou teng'	'M'	
+101332	'zuo wei'	'M'	
+101333	'nang ni'	'F'	
+101334	'pang pi'	'F'	
+101335	'chan jiang'	'F'	
+101336	'li tang'	'F'	
+101337	'ou bian'	'F'	
+101338	'gu wu'	'M'	
+101339	'sao chen'	'F'	
+101340	'nin ju'	'F'	
+101341	'cheng chu'	'F'	
+101342	'chuan cen'	'M'	
+101343	'hen han'	'M'	
+101344	'dia ma'	'F'	
+101345	'chai yan'	'M'	
+101346	'di zhou'	'F'	
+101347	'dai pi'	'M'	
+101348	'nian chang'	'M'	
+101349	'rang chen'	'M'	
+101350	'nuan lu'	'F'	
+101351	'cui wu'	'M'	
+101352	'zhang an'	'M'	
+101353	'dou meng'	'M'	
+101354	'chen jiang'	'F'	
+101355	'jiu teng'	'F'	
+101356	'ji gu'	'M'	
+101357	'rui tang'	'M'	
+101358	'guang yun'	'F'	
+101359	'run tang'	'F'	
+101360	'shai wu'	'M'	
+101361	'bo pi'	'M'	
+101362	'ce xu'	'F'	
+101363	'bi pi'	'M'	
+101364	'diu shui'	'F'	
+101365	'liao he'	'F'	
+101366	'yao feng'	'F'	
+101367	'sa gu'	'F'	
+101368	'zou tang'	'M'	
+101369	'he zhang'	'F'	
+101370	'te yun'	'M'	
+101371	'zu xie'	'F'	
+101372	'mo chang'	'F'	
+101373	'zan yin'	'F'	
+101374	'xian han'	'M'	
+101375	'zun yu'	'F'	
+101376	'jia fu'	'M'	
+101377	'ye hao'	'M'	
+101378	'lv zheng'	'M'	
+101379	'ban wei'	'F'	
+101380	'zan chang'	'M'	
+101381	'mou lian'	'M'	
+101382	'su yu'	'M'	
+101383	'ning yin'	'F'	
+101384	'cuan lv'	'M'	
+101385	'ya zhang'	'F'	
+101386	'ga yun'	'F'	
+101387	'niang pi'	'M'	
+101388	'gun wu'	'M'	
+101389	'xi meng'	'F'	
+101390	'xian ju'	'F'	
+101391	'dia shi'	'F'	
+101392	'rang chang'	'M'	
+101393	'cha pan'	'F'	
+101394	'biao zhang'	'F'	
+101395	'diao yuan'	'F'	
+101396	'neng lv'	'M'	
+101397	'bo he'	'M'	
+101398	'jun hao'	'M'	
+101399	'shun hua'	'F'	
+101400	'dui shi'	'M'	
+101401	'nian ping'	'F'	
+101402	'en feng'	'F'	
+101403	'hu ma'	'M'	
+101404	'dui yu'	'M'	
+101405	'bo jiang'	'M'	
+101406	'ang shi'	'F'	
+101407	'yo mu'	'F'	
+101408	'ma yuan'	'F'	
+101409	'shang xi'	'M'	
+101410	'guang ren'	'F'	
+101411	'jue ren'	'M'	
+101412	'du yu'	'M'	
+101413	'ce shui'	'M'	
+101414	'en kang'	'M'	
+101415	'ji chang'	'F'	
+101416	'long wei'	'F'	
+101417	'gui feng'	'M'	
+101418	'shen chang'	'F'	
+101419	'en you'	'F'	
+101420	'le luo'	'F'	
+101421	'lao jiang'	'M'	
+101422	'kuang he'	'M'	
+101423	'pan huang'	'F'	
+101424	'mao xi'	'M'	
+101425	'qiao yin'	'M'	
+101426	'ni yang'	'F'	
+101427	'ting yan'	'M'	
+101428	'zhen wu'	'F'	
+101429	'xian ren'	'M'	
+101430	'chuan lian'	'M'	
+101431	'er zhu'	'F'	
+101432	'lai he'	'M'	
+101433	'zeng hua'	'M'	
+101434	'pi ni'	'M'	
+101435	'niao feng'	'F'	
+101436	'cun xie'	'M'	
+101437	'pai kang'	'F'	
+101438	'die yin'	'F'	
+101439	'dong wu'	'M'	
+101440	'yu teng'	'M'	
+101441	'chong ma'	'F'	
+101442	'chuai tang'	'M'	
+101443	'zui peng'	'M'	
+101444	'hang feng'	'F'	
+101445	'zhai yin'	'F'	
+101446	'dai yun'	'F'	
+101447	'guai wei'	'M'	
+101448	'jue you'	'M'	
+101449	'nen cen'	'F'	
+101450	'zha yang'	'M'	
+101451	'ding lei'	'M'	
+101452	'can wu'	'M'	
+101453	'shuang dou'	'M'	
+101454	'tao shi'	'F'	
+101455	'ou zhu'	'M'	
+101456	'shua kong'	'F'	
+101457	'mie yu'	'F'	
+101458	'pen bi'	'F'	
+101459	'lin feng'	'M'	
+101460	'qu ping'	'F'	
+101461	'shuo lei'	'M'	
+101462	'mian shui'	'F'	
+101463	'xi he'	'M'	
+101464	'nuan he'	'F'	
+101465	'chui ni'	'F'	
+101466	'wu jin'	'F'	
+101467	'shua bai'	'M'	
+101468	'zi chu'	'M'	
+101469	'zhe feng'	'M'	
+101470	'hen lei'	'F'	
+101471	'kao qin'	'M'	
+101472	'tao wei'	'M'	
+101473	'guan lv'	'M'	
+101474	'dui yan'	'F'	
+101475	'long dou'	'F'	
+101476	'zeng teng'	'M'	
+101477	'ai kang'	'M'	
+101478	'wu he'	'M'	
+101479	'bu huang'	'F'	
+101480	'qin qi'	'F'	
+101481	'xue yang'	'M'	
+101482	'sao chang'	'F'	
+101483	'm wei'	'F'	
+101484	'cuan mu'	'M'	
+101485	'zhui feng'	'M'	
+101486	'zuan zhu'	'M'	
+101487	'zi jin'	'F'	
+101488	'gao ping'	'M'	
+101489	'shun sun'	'M'	
+101490	'ci zhang'	'M'	
+101491	'pian teng'	'F'	
+101492	'tui huang'	'M'	
+101493	'sou hua'	'F'	
+101494	'rang zhou'	'F'	
+101495	'chan pan'	'F'	
+101496	'qing feng'	'M'	
+101497	'yi tao'	'F'	
+101498	'nie wei'	'F'	
+101499	'yi yin'	'M'	
+101500	'tiao yu'	'F'	
+Course	235	2
+300001	'Introduction to Aerospace Engineering and Design'	
+300002	'Unified Engineering I, II, III, & IV'	
+300003	'Unified Engineering I, II, III, & IV'	
+300004	'Unified Engineering I, II, III, & IV'	
+300005	'Unified Engineering I, II, III, & IV'	
+300006	'Thermal Energy'	
+300007	'Principles of Automatic Control'	
+300008	'Dynamics'	
+300009	'Aerodynamics'	
+300010	'Compressible Flow'	
+300011	'Aerodynamics of Viscous Fluids'	
+300012	'Structural Mechanics'	
+300013	'Techniques for Structural Analysis and Design'	
+300014	'Computational Mechanics of Materials'	
+300015	'Plates and Shells'	
+300016	'Estimation and Control of Aerospace Systems'	
+300017	'Feedback Control Systems'	
+300018	'Stochastic Estimation and Control'	
+300019	'Principles of Optimal Control'	
+300020	'Aircraft Stability and Control'	
+300021	'Dynamics of Nonlinear Systems'	
+300022	'Software Engineering Concepts'	
+300023	'System Safety'	
+300024	'Communication Systems Engineering'	
+300025	'Data Communication Networks'	
+300026	'Infinite Random Matrix Theory'	
+300027	'Random Matrix Theory and Its Applications'	
+300028	'Principles of Autonomy and Decision Making'	
+300029	'Cognitive Robotics'	
+300030	'Principles of Autonomy and Decision Making'	
+300031	'Human Supervisory Control of Automated Systems'	
+300032	'Aerospace Biomedical and Life Support Engineering'	
+300033	'Rocket Propulsion'	
+300034	'Space Propulsion'	
+300035	'Internal Flows in Turbomachines'	
+300036	'Aerospace Dynamics'	
+300037	'Experimental Projects I'	
+300038	'Experimental Projects II'	
+300039	'Inventions and Patents'	
+300040	'Management in Engineering'	
+300041	'Prototyping Avionics'	
+300042	'Air Traffic Control'	
+300043	'Airline Management'	
+300044	'Logistical and Transportation Planning Methods'	
+300045	'Logistical and Transportation Planning Methods'	
+300046	'Airline Schedule Planning'	
+300047	'Engineering Design and Rapid Prototyping'	
+300048	'Engineering Design and Rapid Prototyping'	
+300049	'The Aerospace Industry'	
+300050	'Space Systems Engineering'	
+300051	'Satellite Engineering'	
+300052	'Integrating the Lean Enterprise'	
+300053	'Engineering Risk-Benefit Analysis'	
+300054	'System Safety'	
+300055	'Robust System Design'	
+300056	'Aircraft Systems Engineering'	
+300057	'Aircraft Systems Engineering'	
+300058	'Air Transportation Systems Architecting'	
+300059	'Multidisciplinary System Design Optimization'	
+300060	'Space Policy Seminar'	
+300061	'Space System Architecture and Design'	
+300062	'Engineering Apollo: The Moon Project as a Complex System'	
+300063	'Computational Methods in Aerospace Engineering'	
+300064	'Introduction to Numerical Simulation (SMA 5211)'	
+300065	'Numerical Methods for Partial Differential Equations (SMA 5212)'	
+300066	'Computational Geometry'	
+300067	'Proseminar in Manufacturing'	
+300068	'Introduction to Anthropology'	
+300069	'Anthropological Theory'	
+300070	'Seminar in Ethnography and Fieldwork'	
+300071	'Magic, Witchcraft, and the Spirit World'	
+300072	'Myth, Ritual, and Symbolism'	
+300073	'Medical Anthropology'	
+300074	'Dilemmas in Bio-Medical Ethics: Playing God or Doing Good?'	
+300075	'Anthropology of War and Peace'	
+300076	'Identity and Difference'	
+300077	'Identity and Difference'	
+300078	'Law and Society'	
+300079	'Introduction to Latin American Studies'	
+300080	'Violence, Human Rights, and Justice'	
+300081	'Ethnic and National Identity'	
+300082	'The Contemporary American Family'	
+300083	'Gender, Sexuality, and Society'	
+300084	'American Dream: Exploring Class in the U.S.'	
+300085	'Race and Science'	
+300086	'Power: Interpersonal, Organizational and Global Dimensions'	
+300087	'Culture, Embodiment and the Senses'	
+300088	'Marketing, Microchips and McDonalds: Debating Globalization'	
+300089	'Documenting Culture'	
+300090	'Gender, Power, and International Development'	
+300091	'Technology and Culture'	
+300092	'Environmental Struggles'	
+300093	'Drugs, Politics, and Culture'	
+300094	'Drugs, Politics, and Culture'	
+300095	'Photography and Truth'	
+300096	'The Anthropology of Computing'	
+300097	'Introduction to Latin American Studies'	
+300098	'The Conquest of America'	
+300099	'Anthropology of the Middle East'	
+300100	'Medicine, Religion and Politics in Africa and the African Diaspora'	
+300101	'Social Theory and Analysis'	
+300102	'CityScope: New Orleans'	
+300103	'Experiencing Architecture Studio'	
+300104	'Architectural Design: Intentions'	
+300105	'Architecture Studio: Intentions'	
+300106	'MArch Portfolio Seminar'	
+300107	'Architectural Design, Level I: Perceptions and Processes'	
+300108	'Architecture Studio: Building in Landscapes'	
+300109	'Architecture Studio: Building in Landscapes'	
+300110	'Architecture Studio: Building in Landscapes'	
+300111	'Architectural Design, Level II: Material Essence: The Glass House'	
+300112	'Architecture Design, Level II: Cuba Studio'	
+300113	'Immaterial Limits: Process and Duration'	
+300114	'Architectural Design, Level II: New Orleans Studio'	
+300115	'Architectural Design, Level III: A Student Center for MIT'	
+300116	'Urban Design Studio: Providence'	
+300117	'Urban Design'	
+300118	'Beijing Urban Design Studio'	
+300119	'Ecuador Workshop'	
+300120	'The Space Between Workshop'	
+300121	'Ecuador Workshop'	
+300122	'Digital Mock-Up Workshop'	
+300123	'Case Studies in City Form'	
+300124	'Architectural Design Workshop - Rethinking Office Development'	
+300125	'Architecture Design Workshop: Researching User Demand for Innovative Offices'	
+300126	'Sustainable Design and Technology Research Workshop'	
+300127	'Architectural Design Workshop: Collage - Method and Form'	
+300128	'Architectural Design Workshops: Computational Design for Housing'	
+300129	'Beijing Urban Design Studio'	
+300130	'Introduction to Integrated Design'	
+300131	'Special Problems in Architectural Design'	
+300132	'Architecture Design, Level II: Cuba Studio'	
+300133	'Introduction to Design Computing'	
+300134	'The Once and Future City'	
+300135	'Design Fabrication'	
+300136	'Advanced Seminar: Urban Nature and City Design'	
+300137	'Sensing Place: Photography as Inquiry'	
+300138	'Sites in Sight: Photography as Inquiry'	
+300139	'Urban Housing: Paris, London, New York'	
+300140	'Urban Design Politics'	
+300141	'Urban Design Skills: Observing, Interpreting, and Representing the City'	
+300142	'Theory of City Form'	
+300143	'Media Technology and City Design and Development'	
+300144	'Introduction to Urban Design and Development'	
+300145	'Introduction to Urban Design and Development'	
+300146	'Site and Urban Systems Planning'	
+300147	'Property Rights in Transition'	
+300148	'Introduction to Design Inquiry'	
+300149	'Introduction to Design Inquiry'	
+300150	'Power of Place: Media Technology, Youth, and City Design and Development'	
+300151	'Furniture Making'	
+300152	'Special Problems in Architecture Studies'	
+300153	'Introduction to the Visual Arts'	
+300154	'BSAD Foundations in the Visual Arts'	
+300155	'Dialogue in Art, Architecture, and Urbanism'	
+300156	'The Production of Space: Art, Architecture and Urbanism in Dialogue'	
+300157	'Introduction to Sculpture'	
+300158	'Introduction to Photography'	
+300159	'Photography and Related Media'	
+300160	'Introduction to Video'	
+300161	'Advanced Projects in the Visual Arts: Personal Narrative'	
+300162	'Studio Seminar in Public Art'	
+300163	'Interrogative Design Workshop'	
+300164	'Introduction to Building Technology'	
+300165	'Ecologies of Construction'	
+300166	'Building Technology Laboratory'	
+300167	'Fundamentals of Energy in Buildings'	
+300168	'Daylighting'	
+300169	'Basic Structural Theory'	
+300170	'Building Technologies II: Building Structural Systems I'	
+300171	'Building Technologies III: Building Structural Systems II'	
+300172	'Analysis of Historic Structures'	
+300173	'Building Technology I: Materials and Construction'	
+300174	'Building Technologies II: Building Structural Systems I'	
+300175	'Building Technologies III: Building Structural Systems II'	
+300176	'Building Technology III: Building Structural Systems'	
+300177	'Form-Finding and Structural Optimization: Gaudi Workshop'	
+300178	'Emergent Materials II'	
+300179	'Natural Light in Design'	
+300180	'Introduction to Design Computing'	
+300181	'Architectural Construction and Computation'	
+300182	'Digital Design Fabrication'	
+300183	'Digital Mock-Up Workshop'	
+300184	'Computational Design I: Theory and Applications'	
+300185	'Computational Design I: Theory and Applications'	
+300186	'Inquiry into Computation and Design'	
+300187	'Modern Art and Mass Culture'	
+300188	'Thinking About Architecture: In History and At Present'	
+300189	'Topics in the Avant-Garde in Literature and Cinema'	
+300190	'Religious Architecture and Islamic Cultures'	
+300191	'The Architecture of Cairo'	
+300192	'Drawings & Numbers: Five Centuries of Digital Design'	
+300193	'Selected Topics in Architecture: Architecture from 1750 to the Present'	
+300194	'20th Century Art'	
+300195	'Theory and Method in the Study of Architecture and Art'	
+300196	'Contemporary Architecture and Critical Debate'	
+300197	'Stories Without Words: Photographing the First Year'	
+300198	'SCUBA'	
+300199	'Tennis'	
+300200	'Weight Training'	
+300201	'Archery'	
+300202	'Fencing'	
+300203	'Sailing'	
+300204	'Physical Intelligence'	
+300205	'PE for ME'	
+300206	'Introduction to Bioengineering (BE.010J)'	
+300207	'Statistical Thermodynamics of Biomolecular Systems (BE.011J)'	
+300208	'Macroepidemiology (BE.102)'	
+300209	'Chemicals in the Environment: Toxicology and Public Health (BE.104J)'	
+300210	'Systems Microbiology'	
+300211	'Laboratory Fundamentals in Biological Engineering'	
+300212	'Thermodynamics of Biomolecular Systems'	
+300213	'Biological Engineering Programming'	
+300214	'Computation for Biological Engineers'	
+300215	'Mechanisms of Drug Actions'	
+300216	'Biological Engineering II: Instrumentation and Measurement'	
+300217	'Molecular, Cellular, and Tissue Biomechanics'	
+300218	'Biomolecular Kinetics and Cell Dynamics'	
+300219	'Fields, Forces and Flows in Biological Systems'	
+300220	'Materials for Biomedical Applications'	
+300221	'Molecular Structure of Biological Materials (BE.442)'	
+300222	'Quantitative Physiology: Cells and Tissues'	
+300223	'Quantitative Physiology: Organ Transport Systems'	
+300224	'Perspectives in Biological Engineering'	
+300225	'Molecular, Cellular and Tissue Biomechanics (BE.410J)'	
+300226	'Cell-Matrix Mechanics'	
+300227	'Biomolecular Kinetics and Cellular Dynamics (BE.420J)'	
+300228	'Fields, Forces, and Flows in Biological Systems (BE.430J)'	
+300229	'Analysis of Biological Networks (BE.440)'	
+300230	'Biomaterials-Tissue Interactions (BE.441)'	
+300231	'Molecular Structure of Biological Materials (BE.442)'	
+300232	'Molecular and Cellular Pathophysiology (BE.450)'	
+300233	'Design of Medical Devices and Implants'	
+300234	'Biomedical Information Technology (BE.453J)'	
+300235	'Molecular Principles of Biomaterials'	
+Exam	580	3
+100949	300121	44	
+100523	300004	91	
+101132	300047	92	
+100862	300110	73	
+100047	300131	70	
+100956	300188	100	
+101202	300190	86	
+101012	300067	85	
+100262	300058	59	
+101241	300157	74	
+101059	300067	100	
+101139	300168	95	
+100622	300062	75	
+101086	300148	92	
+101103	300103	64	
+100340	300062	100	
+100772	300112	70	
+100679	300069	86	
+100507	300174	70	
+100805	300053	73	
+101397	300051	97	
+101287	300187	67	
+100442	300232	91	
+100386	300136	100	
+101249	300189	100	
+100903	300183	90	
+100476	300073	57	
+100170	300128	100	
+100513	300199	90	
+100911	300215	57	
+100546	300060	83	
+100962	300161	82	
+101286	300054	100	
+101497	300052	70	
+100861	300124	69	
+101457	300190	70	
+100621	300122	85	
+101210	300030	78	
+100350	300034	70	
+101197	300125	80	
+100932	300102	43	
+101475	300013	63	
+100436	300017	38	
+100382	300078	92	
+101373	300225	29	
+100510	300173	63	
+101040	300172	64	
+100547	300143	99	
+100477	300228	49	
+100033	300183	97	
+100139	300004	80	
+101035	300126	79	
+100883	300016	48	
+100665	300030	99	
+101470	300174	78	
+101002	300153	75	
+100058	300012	42	
+100438	300059	85	
+101067	300223	67	
+100571	300072	55	
+101321	300025	94	
+100188	300211	78	
+100318	300226	72	
+100459	300075	88	
+100988	300158	68	
+100288	300053	60	
+100056	300124	100	
+101239	300177	74	
+100922	300196	44	
+101102	300123	100	
+100838	300022	99	
+101311	300098	52	
+100041	300218	89	
+100070	300221	69	
+100332	300087	71	
+100880	300043	86	
+100476	300007	54	
+100328	300124	80	
+101274	300128	57	
+101304	300097	91	
+100318	300047	81	
+100238	300060	83	
+100755	300112	78	
+100154	300141	94	
+101156	300192	100	
+100326	300154	100	
+100004	300066	95	
+101199	300022	96	
+100604	300186	82	
+100911	300142	54	
+100096	300148	100	
+101279	300081	39	
+100727	300178	86	
+100757	300231	100	
+100216	300017	74	
+100331	300038	64	
+101268	300135	85	
+100176	300193	81	
+100590	300188	100	
+100483	300045	88	
+101178	300029	62	
+100471	300227	51	
+101083	300163	100	
+100366	300168	97	
+100378	300176	100	
+101247	300222	89	
+100961	300150	98	
+100085	300191	75	
+100403	300067	69	
+100806	300182	48	
+100536	300152	88	
+100511	300139	95	
+101001	300063	99	
+100955	300131	100	
+101387	300216	84	
+100439	300131	79	
+100431	300061	88	
+101469	300056	81	
+101119	300037	67	
+101291	300060	100	
+100348	300148	100	
+100890	300194	71	
+100402	300217	79	
+100797	300173	100	
+100477	300148	73	
+100269	300068	100	
+100920	300175	100	
+101121	300146	91	
+100282	300034	100	
+100018	300065	63	
+100525	300035	60	
+100454	300089	100	
+100904	300214	75	
+100083	300106	100	
+100921	300154	94	
+101166	300002	91	
+100662	300096	73	
+100149	300204	74	
+101296	300075	94	
+100666	300233	97	
+101175	300182	61	
+100204	300077	67	
+100777	300009	100	
+101079	300063	70	
+100514	300192	79	
+101297	300086	84	
+100949	300153	52	
+100432	300171	94	
+101213	300087	84	
+100298	300044	77	
+100726	300096	89	
+100743	300071	84	
+100346	300221	76	
+101064	300165	100	
+101481	300213	100	
+100961	300143	98	
+101055	300221	61	
+100865	300139	100	
+100844	300039	95	
+100502	300122	70	
+101309	300190	100	
+100770	300112	68	
+100641	300145	68	
+100691	300159	80	
+100668	300085	69	
+101092	300148	76	
+100598	300154	95	
+101190	300084	49	
+100374	300139	100	
+100988	300016	100	
+100031	300208	80	
+100631	300118	98	
+100768	300054	84	
+100385	300203	100	
+101131	300038	70	
+100658	300006	85	
+100297	300165	93	
+101398	300163	92	
+100242	300135	60	
+100823	300160	100	
+101258	300076	80	
+101421	300095	32	
+100823	300184	81	
+100299	300153	96	
+100717	300159	78	
+101347	300030	80	
+100954	300021	78	
+101196	300042	100	
+100760	300044	48	
+100248	300153	62	
+100809	300194	57	
+100515	300231	53	
+101136	300054	71	
+100089	300022	81	
+101293	300153	70	
+100585	300117	78	
+100842	300224	89	
+101459	300229	63	
+100381	300077	42	
+100019	300107	86	
+101074	300151	91	
+100828	300055	63	
+100918	300006	76	
+100216	300031	61	
+101396	300031	78	
+100981	300089	71	
+101112	300015	76	
+101427	300178	85	
+100548	300011	65	
+100336	300054	66	
+101105	300094	94	
+100299	300157	91	
+100476	300221	100	
+100068	300097	77	
+100288	300041	72	
+100502	300174	94	
+100042	300195	100	
+101108	300129	100	
+100871	300212	100	
+101284	300086	95	
+100351	300004	100	
+100823	300101	100	
+100751	300137	78	
+101303	300099	44	
+100099	300133	80	
+100408	300144	54	
+100788	300197	91	
+101073	300041	53	
+100604	300129	52	
+100632	300155	97	
+100349	300106	100	
+101306	300029	74	
+100372	300182	65	
+100148	300192	85	
+100400	300140	81	
+100899	300178	74	
+100136	300040	35	
+100494	300058	68	
+101124	300113	93	
+100969	300091	47	
+100873	300230	65	
+100965	300089	69	
+101495	300119	67	
+100746	300077	68	
+101003	300022	91	
+101029	300121	51	
+100173	300118	59	
+101187	300101	70	
+100999	300170	76	
+100959	300235	67	
+100880	300078	60	
+100500	300032	100	
+100245	300085	100	
+101079	300018	100	
+101256	300152	100	
+100280	300047	74	
+100310	300099	46	
+100768	300051	100	
+101336	300085	74	
+100576	300024	82	
+101279	300172	100	
+100570	300134	100	
+100107	300193	66	
+101402	300085	57	
+101338	300031	77	
+101005	300057	74	
+100593	300215	80	
+101409	300137	83	
+100264	300123	73	
+100260	300170	100	
+100240	300030	40	
+100013	300127	77	
+100987	300146	74	
+100656	300008	87	
+100358	300097	73	
+100697	300222	97	
+101132	300059	86	
+100682	300225	74	
+100129	300213	100	
+101034	300140	100	
+100196	300229	95	
+101437	300220	56	
+101244	300200	93	
+100337	300045	64	
+100191	300142	55	
+101103	300212	95	
+100671	300172	87	
+100589	300043	90	
+100617	300173	79	
+100378	300166	100	
+100359	300115	73	
+101224	300007	75	
+100521	300033	98	
+100902	300187	45	
+100169	300173	85	
+100811	300156	100	
+100752	300042	69	
+100903	300026	63	
+100016	300078	100	
+100029	300140	55	
+100936	300050	91	
+100285	300229	43	
+100071	300122	46	
+100268	300134	47	
+100152	300102	68	
+100398	300111	75	
+101461	300169	100	
+101353	300023	67	
+101045	300127	85	
+100495	300040	71	
+100047	300013	24	
+101313	300086	100	
+101300	300038	93	
+100252	300006	100	
+100810	300224	65	
+101460	300178	83	
+100413	300117	75	
+100279	300156	100	
+101329	300209	33	
+100931	300036	84	
+101311	300228	93	
+100688	300083	52	
+100580	300184	88	
+101183	300046	51	
+100009	300061	100	
+100701	300035	100	
+100718	300126	100	
+100577	300071	88	
+101172	300032	77	
+101171	300069	79	
+101085	300204	74	
+100886	300140	99	
+100554	300126	76	
+100524	300068	81	
+101113	300070	93	
+100318	300100	66	
+100314	300137	82	
+100321	300177	70	
+100697	300036	89	
+100751	300019	91	
+101343	300007	85	
+101483	300112	69	
+100581	300109	100	
+100790	300053	68	
+101248	300186	34	
+100818	300026	92	
+100905	300181	89	
+100945	300211	66	
+100306	300081	93	
+100292	300149	88	
+101335	300181	71	
+100638	300173	100	
+100416	300071	91	
+101239	300160	85	
+101323	300070	97	
+100517	300008	41	
+100582	300078	89	
+100517	300096	74	
+101046	300230	96	
+100481	300045	95	
+101402	300109	74	
+101370	300141	63	
+100665	300080	91	
+101339	300198	97	
+100103	300122	59	
+100324	300207	85	
+100512	300196	92	
+100042	300033	64	
+100570	300179	19	
+101390	300049	66	
+100087	300138	100	
+100577	300061	83	
+101141	300048	81	
+100180	300222	96	
+100595	300037	64	
+100529	300004	75	
+100796	300023	75	
+100828	300100	75	
+101128	300173	86	
+100806	300198	83	
+101482	300042	100	
+100345	300070	59	
+100451	300008	70	
+101273	300078	92	
+101072	300038	82	
+101354	300167	79	
+101076	300007	89	
+101108	300039	49	
+100245	300218	100	
+100673	300107	46	
+101139	300102	62	
+100625	300087	55	
+101318	300123	97	
+100440	300153	96	
+100401	300201	63	
+101372	300132	72	
+101498	300008	100	
+100107	300068	80	
+101161	300224	87	
+101160	300121	84	
+101073	300120	100	
+100802	300231	78	
+101321	300044	69	
+100283	300135	83	
+100842	300143	74	
+101066	300148	54	
+100319	300123	83	
+101290	300228	49	
+100336	300165	77	
+100596	300122	84	
+100042	300009	80	
+100793	300179	66	
+100679	300161	89	
+100260	300140	100	
+100452	300046	40	
+100845	300082	48	
+100892	300036	93	
+101244	300129	72	
+100912	300087	64	
+100005	300044	80	
+100345	300131	80	
+101029	300092	78	
+100686	300045	87	
+101287	300141	100	
+100256	300085	83	
+100389	300141	73	
+100988	300091	97	
+100906	300163	90	
+101268	300206	78	
+100053	300124	100	
+100260	300202	57	
+100161	300179	36	
+100763	300042	72	
+101430	300009	79	
+100966	300137	37	
+101302	300056	95	
+101104	300056	66	
+101314	300001	75	
+100309	300073	89	
+101163	300015	59	
+100015	300112	93	
+101033	300146	95	
+100160	300032	65	
+101022	300050	92	
+100025	300219	82	
+101477	300093	88	
+101179	300156	97	
+100160	300118	79	
+100324	300223	84	
+100563	300193	42	
+100519	300202	76	
+100046	300128	61	
+101268	300075	89	
+100148	300152	98	
+101362	300206	61	
+100709	300028	60	
+100941	300173	100	
+100919	300079	68	
+101117	300144	99	
+100674	300122	58	
+100925	300185	94	
+100053	300169	82	
+101164	300035	100	
+100367	300025	80	
+100953	300038	82	
+100013	300086	39	
+101438	300233	38	
+100017	300056	62	
+100421	300106	81	
+100696	300053	76	
+100726	300010	76	
+101002	300036	87	
+100553	300112	63	
+101225	300156	39	
+100444	300019	62	
+100846	300031	77	
+101121	300214	78	
+101005	300227	41	
+100162	300087	80	
+100553	300173	85	
+101271	300147	100	
+100785	300179	100	
+100516	300055	64	
+100347	300041	94	
+100267	300032	100	
+101055	300124	74	
+100623	300098	100	
+101151	300178	91	
+100221	300168	83	
+100521	300182	84	
+101469	300060	85	
+100285	300177	84	
+100795	300109	83	
+100076	300142	81	
+101334	300221	100	
+101465	300080	41	
+100330	300146	100	
+101445	300126	99	
+100196	300138	67	
+100307	300121	100	
+100057	300063	77	
+100843	300076	66	
+100417	300203	98	
+100242	300216	100	
+100642	300058	73	
+101062	300130	94	
+100794	300104	92	
+100865	300102	50	
+100914	300185	84	
+101378	300158	58	
+101413	300111	100	
+100727	300161	97	
+100204	300057	95	
+100862	300012	77	
+100236	300105	99	
+100667	300043	100	
+100024	300073	100	
+100065	300201	87	
+100472	300091	59	
+101462	300231	54	
+100515	300128	100	
+100276	300010	77	
+100077	300172	98	
+101176	300146	64	
+101131	300055	96	
+100414	300144	60	
+100358	300054	43	
+100904	300174	62	
+100793	300117	98	
+101175	300098	77	
+100244	300011	75	
+101202	300079	74	
+101309	300203	72	
+100789	300147	93	
+100225	300018	90	
+100511	300137	82	
+100297	300046	62	
+100925	300179	91	
+101368	300003	100	
+100530	300195	75	
+100233	300153	85	
+100130	300134	100	
+100553	300021	71	
+100715	300181	63	
+100976	300128	47	
+100969	300181	84	
+100645	300002	62	
+101346	300016	78	
+100761	300136	100	
+100175	300120	97	
+101360	300156	80	
+100746	300053	72	
+100460	300022	100	
+100568	300016	87	
+100946	300012	75	
+100009	300165	70	
+100420	300044	77	
+100294	300147	84	
+100386	300229	86	
+100523	300122	84	
+101329	300133	84	
+101130	300178	67	
+100296	300116	53	
+101295	300216	46	
+100765	300154	100	
+101000	300161	73	
+100456	300106	78	
+100850	300198	72	
+100186	300021	100	
+101233	300028	76	
+100741	300223	72	
+100229	300093	100	
+100717	300022	78	
+100257	300222	69	
+101040	300146	74	
+100630	300148	98	
+100535	300026	86	
+100106	300139	82	
+100398	300195	56	
+100526	300104	71	

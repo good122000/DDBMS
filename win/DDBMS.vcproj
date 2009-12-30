@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="D:\DDBMS\src\LocalAgent;&quot;D:\DDBMS\src\MySQL++&quot;;D:\DDBMS\src\TinyXML;&quot;F:\Program Files\boost\boost_1_39&quot;"
+				AdditionalIncludeDirectories="D:\DDBMS\src\MySQL;D:\DDBMS\src\LocalAgent;&quot;D:\DDBMS\src\MySQL++&quot;;D:\DDBMS\src\TinyXML;&quot;F:\Program Files\boost\boost_1_39&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"

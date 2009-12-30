@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <set>
 #include <boost/regex.hpp>
 #include <boost/bind.hpp>
 #include <boost/shared_ptr.hpp>
@@ -11,36 +12,17 @@
 #include <boost/asio.hpp>
 #include <boost/thread.hpp>
 #include <boost/function.hpp>
+#include <mysql++.h>
 #include "tinyxml.h"
 
 
 //****************************************************************************
 
-class CPRes:
-	public TiXmlDocument
+template <typename T >
+inline void Release(T *p)
 {
-public:
-private:
-};
-
-class QORes;
-
-class QueryRes
-{
-public:
-	QueryRes(std::string const data);
-	void Jion(QueryRes const & x);
-	void Union(QueryRes const & x);
-	void Projection(std::string const x[]);
-	bool Empty();
-	unsigned Rows();
-	unsigned Columns();
-private:
-	unsigned rows;
-	unsigned columns;
-	TiXmlDocument doc_;
-	//std::vector<std::string >* table;
-};
+	delete [] p;
+}
 
 enum relation
 {
@@ -56,7 +38,7 @@ enum relation
 	LE
 };
 
-#define DATABUFFERSIZE 6400
+#define DATABUFFERSIZE 1200
 
 #pragma pack(push,1)
 
@@ -81,8 +63,8 @@ public:
 	{
 		size_=size;
 		used=0;
-		data_=new char[size];
-		memset(data_,0,size);
+		data_=new char[size_+1];
+		memset(data_,0,size_+1);
 	}
 	Data()
 	{
@@ -94,12 +76,23 @@ public:
 	{
 		size_=data.size_;
 		used=data.used;
-		data_=new char[size_];
+		data_=new char[size_+1];
+		data_[size_]='\0';
 		memcpy(data_,data.data_,size_);
 	}
-	~Data()
+	virtual ~Data()
 	{
 		delete[] data_;
+	}
+	Data& operator=(const Data& data)
+	{
+		delete[] data_;
+		size_=data.size_;
+		used=data.used;
+		data_=new char[size_+1];
+		data_[size_]='\0';
+		memcpy(data_,data.data_,size_);
+		return *this;
 	}
 	char const *  GetData()
 	{
@@ -115,10 +108,11 @@ public:
 	void Assigen(unsigned size)
 	{
 		delete[] data_;
-		data_=new char[size];
-		memset(data_,0,size);
 		size_=size;
 		used=0;
+		data_=new char[size_+1];
+		memset(data_,0,size_+1);
+		
 	}
 
 private:
@@ -131,27 +125,222 @@ typedef boost::shared_ptr<Data> DataPtr;
 
 //**********************************************************************************
 
+class CPRes:
+	public TiXmlDocument,
+	public boost::enable_shared_from_this<CPRes>
+{
+public:
+	CPRes():TiXmlDocument(){};
+	virtual ~CPRes(){};
+private:
+};
+
+
+typedef boost::shared_ptr<CPRes> CPResPtr;
+
+class Condition:
+	public TiXmlElement
+{
+public:
+	virtual ~Condition(){};
+private:
+};
+
+class QueryRes;
+
+class MyRow:
+	public std::map<std::string ,std::string >,public boost::enable_shared_from_this<MyRow>
+{
+public:
+	MyRow(std::map<std::string ,std::vector<std::string > >& column):column_(column)
+	{
+	}
+	MyRow(const MyRow& row)column_(
+	{
+		if(this!=&row)
+		{
+			std::map<std::string ,std::string >::operator=(row);
+			column_=row.column_;
+
+		}
+	}
+	MyRow& operator=(MyRow& row)
+	{
+		if(this!=&row)
+		{
+			std::map<std::string ,std::string >::operator=(row);
+			column_=row.column_;
+
+		}
+	}
+	virtual ~MyRow(){};
+
+private:
+	std::map<std::string ,std::vector<std::string > >& column_;
+};
+
+typedef boost::shared_ptr<MyRow> MyRowPtr;
+
+//typedef std::vector<MyRowPtr> MyQueryRes;
+class GDD;
+
+class MyQueryRes
+{
+	typedef std::pair<std::string ,std::string > RowPair;
+	typedef std::pair<std::string ,std::vector<std::string > > ColumnPair;
+	typedef std::vector<MyRow > Row;
+	typedef std::map<std::string ,std::vector<std::string > > Column;
+public:
+	template <typename T >
+	class Iterator
+	{
+	public:
+		Iterator& operator=(Iterator& iter)
+		{
+			iter_=iter.iter_;
+			return *this;
+		}
+		Iterator& operator++()
+		{
+			++iter_;
+			return *this;
+		}
+		Iterator& operator++(int )
+		{
+			iter_++;
+			return *this;
+		}
+		bool operator==(Iterator& iter)
+		{
+			return iter_==iter.iter_;
+		}
+	    bool operator!=(Iterator& iter)
+		{
+			return iter_!=iter.iter_;
+		}
+		MyRow& operator*()
+		{
+			return *iter_;
+		}
+		friend class MyQueryRes;
+	private:
+		typename T::iterator iter_;
+
+	};
+	MyQueryRes(QueryRes& res,GDD& gdd);
+	MyQueryRes(GDD& gdd,std::vector<std::string >& feilds);
+	Iterator<Row> RowBegin()
+	{
+		Iterator<Row> iter;
+		iter.iter_=row_.begin();
+	}
+	Iterator<Column> ColumnBegin()
+	{
+		Iterator<Column> iter;
+		iter.iter_=column_.begin();
+	}
+	Iterator<Row> RowEnd()
+	{
+		Iterator<Row> iter;
+		iter.iter_=row_.end();
+	}
+	Iterator<Column> ColumnEnd()
+	{
+		Iterator<Column> iter;
+		iter.iter_=column_.end();
+	}
+	virtual ~MyQueryRes(){};
+	void Join(MyQueryRes& res);
+	void Union(MyQueryRes& res);
+	void Projection(std::vector<std::string >& feilds);
+	friend class QueryRes;
+private:
+	bool IsKey(int index);
+	void SetKeyFlag();
+	int rows_;
+	int columns_;
+	Row row_;
+	//std::vector<MyRow >::iterator iter_;
+	Column column_;
+	std::vector<std::string > feilds_;
+	//std::set<std::string > keyfeilds_;
+	std::vector<char > keyflag;  //1 key,0 not key
+	std::vector<int> feildlen;
+	std::string tablename_;
+	GDD& gdd_;
+};
+
+class QueryRes:
+	public TiXmlDocument,public boost::enable_shared_from_this<QueryRes>
+{
+public:
+	QueryRes(DataPtr data);
+	QueryRes(std::vector<std::string >& feilds,bool success,std::string& type,std::string& table=std::string(""),int rows=0,int columns=0);
+	QueryRes(bool success,std::string& type,std::string& table=std::string(""),int rows=0,int columns=0);
+	virtual ~QueryRes(){};
+	void Insert(std::vector<std::string >& value);
+	void ConvertToMyQueryRes(MyQueryRes& res);
+	//void Join(QueryRes const & x);
+	//void Union(QueryRes const & x);
+	//void Projection(std::string const x[]);
+	//bool Empty();
+	//int Rows();
+	//int Columns();
+	friend class MyQueryRes;
+private:
+	bool success_;
+	bool nodata_;
+	int rows_;
+	int columns_;
+	std::string tablename_;
+
+	std::vector<std::string > feilds_;
+};
+
+typedef boost::shared_ptr<QueryRes> QueryResPtr;
+
+class RevCmd:
+	public TiXmlDocument
+{
+public:
+	RevCmd(Data& data);
+	RevCmd():TiXmlDocument(){};
+	virtual ~RevCmd(){};
+	const std::string& GetCmdType(); 
+private:
+	std::string cmdtype_;
+
+};
+
+
+
+//**********************************************************************************
+
 class Client:
 	public boost::enable_shared_from_this<Client>
 {
 public:
 	
-	Client(std::string const & address, std::string const & port);
-	~Client();
-	void Write(char* data,unsigned size,unsigned total,Data& res);
+	Client(std::string const & address, std::string const & port,char* data,unsigned total,DataPtr res);
+	virtual ~Client();
+	void Write(char* data,unsigned size,unsigned total,DataPtr res);
 	//void Read(datapack
-	void Read(Data& res);
+	void Read(DataPtr res);
 	void Close();
 	char const * GetData();
 	void Run();
 private:
-	void HandleConnect(boost::system::error_code const & error,boost::asio::ip::tcp::resolver::iterator endpoint_iterator);
-	void DoWrite(char* data,unsigned size,unsigned total,Data& res);
-	void HandleWrite(boost::system::error_code const & error,std::size_t count,char* data,unsigned size,unsigned total,Data& res);
-	void HandleKeepRead(boost::system::error_code const & error,std::size_t count,Data& res);
-	void DoRead(Data& res);
-	void HandleReadData(boost::system::error_code const & error,std::size_t count,Data& res);
+	void HandleConnect(boost::system::error_code const & error,boost::asio::ip::tcp::resolver::iterator& endpoint_iterator);
+	void DoWrite(char* data,unsigned size,unsigned total,DataPtr res);
+	void HandleWrite(boost::system::error_code const & error,std::size_t count,char* data,unsigned size,unsigned total,DataPtr res);
+	void HandleKeepRead(boost::system::error_code const & error,std::size_t count,DataPtr res);
+	void DoRead(DataPtr res);
+	void HandleReadData(boost::system::error_code const & error,std::size_t count,DataPtr res);
 	void DoClose();
+	char* senddata_;
+	unsigned total_;
+	unsigned sent_;
+	DataPtr result_;
 	boost::asio::io_service io_service_;
 	boost::asio::ip::tcp::socket socket_;
 	boost::asio::ip::tcp::resolver resolver_;
@@ -165,32 +354,43 @@ typedef boost::shared_ptr<Client> ClientPtr;
 
 //******************************************************************************************
 
+class Server;
+
+class Session;
+
+typedef boost::shared_ptr<Session> SessionPtr;
+
 class Session:
 	public boost::enable_shared_from_this<Session>
 {
 public:
-	Session(boost::asio::io_service& io_service);
-	~Session();
+	Session(boost::asio::io_service& io_service,Server& server);
+	virtual ~Session();
 	boost::asio::ip::tcp::socket& Socket();
-	void Start(boost::function<bool (Data& ) > handler);
+	void Start(boost::function<bool (SessionPtr, Data &cmd ) > handler);
 	void Write(char* data,unsigned size,unsigned total);
 	//void Read(boost::function<bool (Data*& ) > handler);
+	//void Stop();
 	void Close();
 	void Print();
 private:
 	//void DoWrite(char* data,unsigned size,unsigned total);
 	void HandleWrite(boost::system::error_code const & error,std::size_t,char* data,unsigned size,unsigned total);
-	void HandleKeepRead(boost::system::error_code const & error,std::size_t count,boost::function<bool (Data& ) > handler);
+	void HandleKeepRead(boost::system::error_code const & error,std::size_t count,boost::function<bool (SessionPtr, Data &cmd ) > handler);
 	//void DoRead();
-	void HandleReadData(boost::system::error_code const & error,std::size_t count,boost::function<bool (Data& ) > handler);
+	void HandleReadData(boost::system::error_code const & error,std::size_t count,boost::function<bool (SessionPtr, Data &cmd ) > handler);
 	void DoClose();
 	boost::asio::ip::tcp::socket socket_;
 	datapack buffer_;
 	Data data_;
+	char* senddata_;
+	Server& server_;
+	//unsigned total_;
+	//unsigned sent_;
 
 };
 
-typedef boost::shared_ptr<Session> SessionPtr;
+
 
 
 //******************************************************************************************
@@ -198,26 +398,35 @@ typedef boost::shared_ptr<Session> SessionPtr;
 class Server
 {
 public:
-	Server(unsigned thread_pool_size,unsigned short port,boost::function<bool (Data& ) > handler);
+	Server();
+	Server(unsigned thread_pool_size,unsigned short port,boost::function<bool (SessionPtr, Data &cmd ) > handler);
 	//void HandleAccept(Session& session,const boost::system::error_code& error);
-	void HandleAccept(SessionPtr session,const boost::system::error_code& error,boost::function<bool (Data& ) > handler);
+	void CreateServer(unsigned thread_pool_size,unsigned short port,boost::function<bool (SessionPtr, Data &cmd ) > handler);
+	void HandleAccept(SessionPtr session,const boost::system::error_code& error,boost::function<bool (SessionPtr, Data &cmd ) > handler);
 	void Run();
-	void Stop();
+	void CloseAll();
+	void Close(SessionPtr s);
 private:
 	boost::asio::io_service io_service_;
 	boost::asio::ip::tcp::acceptor acceptor_;
 	boost::asio::ip::tcp::endpoint endpoint_;
 	unsigned thread_pool_size_;
+	std::set<SessionPtr> sessions_;
 };
 
 class GDD;
 
 class LocalAgent;
 
+typedef std::pair<std::string ,std::string > DesInfo;
+typedef std::list<DesInfo > DesList;
+
 class Location
 {
+	
 public:
 	Location(std::string const & tablename,std::string const & var,std::string const & low,std::string const & le,std::string const & up,std::string const & ue);
+	bool GetDes(GDD& gdd, std::list<DesInfo >& deslist);
 	void Print();
 	friend class GDD;
 	friend class LocalAgent;
@@ -240,7 +449,9 @@ public:
 	GDD(std::string const & xml);
 	~GDD();
 	bool Load(std::string const & xml);
-	bool Save();
+	//bool Save();
+	bool GetTableFeilds(std::string& tablename,std::vector<std::string >& feilds);
+	bool GetKeyFeilds(std::string& tablename,std::set<std::string >& feilds);
 	bool GetAllSiteInfo(std::vector<std::pair<std::string ,std::string > >& info);
 	bool GetSiteSetting(std::string const & name,std::string& address,std::string& port);
 	bool GetTableLocation(Location& location);
@@ -325,6 +536,9 @@ public:
 	bool Save();
 	bool GetSqlSetting(std::string const & name,std::string& value);
 	bool GetAppSetting(std::string const & name,std::string& value);
+	bool SetSqlSetting(std::string const & name,std::string& value);
+	bool SetAppSetting(std::string const & name,std::string& value);
+
 private:
 	bool vaild;
 	TiXmlDocument doc_;
@@ -343,24 +557,55 @@ private:
 
 //************************************************************
 
+enum SubSelectionFlag
+{
+	opt,
+	noneopt
+};
+
+class SubSelection:
+	public TiXmlDocument,
+	public boost::enable_shared_from_this<SubSelection>
+{
+	
+	typedef std::list<DesInfo > DesList;
+public:
+	SubSelection(GDD& gdd,std::string& tablename,CPRes& res);
+	DesList& GetDesList();
+	bool IsVaild(){return vaild;}
+
+private:
+	TiXmlElement* GetCondition(std::string tablename,CPRes& res);
+	bool GetDes();
+	bool vaild;
+	std::string tablename_;
+	GDD& gdd_;
+	DesList deslist_;
+};
+
+typedef boost::shared_ptr<SubSelection> SubSelectionPtr;
+
+//************************************************************
+
+
 class LocalAgent
 {
-	typedef bool (LocalAgent::* RevCmdFunc)(SessionPtr senssion,CPRes& res);
+	typedef bool (LocalAgent::* RevCmdFunc)(SessionPtr senssion, RevCmd &cmd);
 	typedef std::map<std::string,RevCmdFunc > RevFuncmap;
 	typedef bool (LocalAgent::* SendCmdFunc)(CPRes& res);
 	typedef std::map<std::string,SendCmdFunc > SendFuncmap;
 	typedef std::list<ClientPtr> ClientList;
 	typedef std::list<DataPtr> DataList;
+	
+	typedef std::list<SubSelectionPtr > SubSelectionList;
 public:
 	LocalAgent();
-	bool Start();
+	void Start();
+	
 private:
-	//bool DistributeCmd(CPRes& res);
-	bool ExecuteCmd(CPRes& res);
-	bool QueryOptimize(CPRes& res);
-	//bool AddQueryInfo(CPRes& res);
-	bool ReceiveCmd(); 
-	//bool ExecuteCmd(std::string cmd);
+	
+	bool ExecuteCmd(SessionPtr senssion, Data &cmd);
+	
 	void StartLocalServer();
 	void StartRevLocalCmd(std::istream& in);
 	bool SendDefineSite(CPRes& res);
@@ -374,25 +619,29 @@ private:
 	bool SendSelect(CPRes& res);
 	bool SendDropTable(CPRes& res);
 	bool SendDropDB(CPRes& res);
-	bool RevDefineSite(SessionPtr senssion,CPRes& res);
-	bool RevCreateDB(SessionPtr senssion,CPRes& res);
-	bool RevCreateTable(SessionPtr senssion,CPRes& res);
-	bool RevFragment(SessionPtr senssion,CPRes& res);
+	bool RevDefineSite(SessionPtr senssion, RevCmd &cmd);
+	bool RevCreateDB(SessionPtr senssion, RevCmd &cmd);
+	bool RevCreateTable(SessionPtr senssion, RevCmd &cmd);
+	bool RevFragment(SessionPtr senssion, RevCmd &cmd);
 	//bool RevAllocate(SessionPtr senssion,CPRes& res);
-	bool RevInsert(SessionPtr senssion,CPRes& res);
-	bool RevDelete(SessionPtr senssion,CPRes& res);
-	bool RevImport(SessionPtr senssion,CPRes& res);
-	bool RevSelect(SessionPtr senssion,CPRes& res);
-	bool RevDropTable(SessionPtr senssion,CPRes& res);
-	bool RevDropDB(SessionPtr senssion,CPRes& res);
+	bool RevInsert(SessionPtr senssion, RevCmd &cmd);
+	bool RevDelete(SessionPtr senssion, RevCmd &cmd);
+	bool RevImport(SessionPtr senssion, RevCmd &cmd);
+	bool RevSelect(SessionPtr senssion, RevCmd &cmd);
+	bool RevDropTable(SessionPtr senssion, RevCmd &cmd);
+	bool RevDropDB(SessionPtr senssion, RevCmd &cmd);
 	void ResultProcess(DataList& datalist,CPRes& res);
+	bool ConnectToSql();
 	//bool AddSelectFeild(CPRes& res,std::string const & table,std::string const & feild);
-	void BroadCast(char const * data,unsigned size);
+	Server server_;
 	CProcessor cprocessor_;
+	mysqlpp::Connection conn_;
+	boost::mutex mutex_;
 	GDD gdd_;
 	LDD ldd_;
 	SendFuncmap sendfuncmap_;
 	RevFuncmap revfuncmap_;
+	bool connected;
 };
 
 #endif //LOCALAGNET_INCLUDE

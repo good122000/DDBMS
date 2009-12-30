@@ -1,17 +1,17 @@
-<?xml version="1.0"?><!--local data dictionary-->
+<?xml version="1.0" ?>
+<!--local data dictionary-->
 <LDD>
-  <SqlSetting>
-    <SqlType>MySQL</SqlType>
-    <Address>localhost</Address>
-    <Port>3306</Port>
-    <UserName>root</UserName>
-    <PassWord>8923131</PassWord>
-    <DataBase>ddbms</DataBase>
-  </SqlSetting>
-  <AppSetting>
-    <SiteName>site1</SiteName>
-    <RevPort>1234</RevPort>
-    <ThreadPollSize>10</ThreadPollSize>
-    <SendPort>4321</SendPort>
-  </AppSetting>
+    <SqlSetting>
+        <SqlType>MySQL</SqlType>
+        <Address>localhost</Address>
+        <Port>3306</Port>
+        <UserName>root</UserName>
+        <PassWord>8923131</PassWord>
+        <DataBase>ddbms1</DataBase>
+    </SqlSetting>
+    <AppSetting>
+        <SiteName>site1</SiteName>
+        <RevPort>1234</RevPort>
+        <ThreadPollSize>10</ThreadPollSize>
+    </AppSetting>
 </LDD>

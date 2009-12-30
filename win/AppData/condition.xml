@@ -1,0 +1,9 @@
+<?xml version="1.0"?><!--condition-->
+<Conditions>
+  <Condition>
+    <Table></Table>
+    <Left></Left>
+    <Operator></Operator>
+    <Right></Right>
+  </Condition>
+</Conditions>

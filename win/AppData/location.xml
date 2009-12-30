@@ -1,0 +1,12 @@
+<?xml version="1.0"?><!--location-->
+<Location>
+  <Table name="" site="">
+    <Range var="all"></Range>
+  </Table>
+  <Table name="">
+    <Range var="id">
+      <Low equal=""></Low>
+      <Up equal=""></Up>
+    </Range>
+  </Table>
+</Location>
