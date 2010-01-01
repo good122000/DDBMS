@@ -20,3 +20,109 @@ bool SendDefineSite(CPRes& res);
 	bool RevSelect(CPRes& res);
 	bool RevDropTable(CPRes& res);
 	bool RevDropDB(CPRes& res);
+	
+	class MyQueryRes
+{
+	typedef std::pair<std::string ,std::string > RowPair;
+	typedef std::pair<std::string ,std::vector<std::string > > ColumnPair;
+	typedef std::vector<MyRow > Row;
+	typedef std::map<std::string ,std::vector<std::string > > Column;
+public:
+	template <typename T >
+	class Iterator
+	{
+	public:
+		Iterator& operator=(Iterator& iter)
+		{
+			iter_=iter.iter_;
+			return *this;
+		}
+		Iterator& operator++()
+		{
+			++iter_;
+			return *this;
+		}
+		Iterator& operator++(int )
+		{
+			iter_++;
+			return *this;
+		}
+		bool operator==(Iterator& iter)
+		{
+			return iter_==iter.iter_;
+		}
+	    bool operator!=(Iterator& iter)
+		{
+			return iter_!=iter.iter_;
+		}
+		MyRow& operator*()
+		{
+			return *iter_;
+		}
+		friend class MyQueryRes;
+	private:
+		typename T::iterator iter_;
+
+	};
+	MyQueryRes(QueryRes& res,GDD& gdd);
+	MyQueryRes(GDD& gdd,std::vector<std::string >& feilds);
+	Iterator<Row> RowBegin()
+	{
+		Iterator<Row> iter;
+		iter.iter_=row_.begin();
+	}
+	Iterator<Column> ColumnBegin()
+	{
+		Iterator<Column> iter;
+		iter.iter_=column_.begin();
+	}
+	Iterator<Row> RowEnd()
+	{
+		Iterator<Row> iter;
+		iter.iter_=row_.end();
+	}
+	Iterator<Column> ColumnEnd()
+	{
+		Iterator<Column> iter;
+		iter.iter_=column_.end();
+	}
+	virtual ~MyQueryRes(){};
+	void Join(MyQueryRes& res);
+	void Union(MyQueryRes& res);
+	void Projection(std::vector<std::string >& feilds);
+	friend class QueryRes;
+private:
+	bool IsKey(int index);
+	void SetKeyFlag();
+	int rows_;
+	int columns_;
+	Row row_;
+	//std::vector<MyRow >::iterator iter_;
+	Column column_;
+	std::vector<std::string > feilds_;
+	//std::set<std::string > keyfeilds_;
+	std::vector<char > keyflag;  //1 key,0 not key
+	std::vector<int> feildlen;
+	std::string tablename_;
+	GDD& gdd_;
+};
+
+CREATE TABLE `course_memory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(80) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MEMORY DEFAULT CHARSET=utf8;
+
+CREATE TABLE `exam_memory` (
+  `student_id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_id` int(11) NOT NULL,
+  `mark` int(11) DEFAULT NULL,
+  PRIMARY KEY (`student_id`,`course_id`)
+) ENGINE=MEMORY DEFAULT CHARSET=utf8;
+
+CREATE TABLE `student_memory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(25) DEFAULT NULL,
+  `sex` char(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MEMORY DEFAULT CHARSET=utf8;

@@ -27,9 +27,9 @@
   </Expression>
   <Expression name="select" subcount="4">
     <Subexpression>select ([^ ]+) from ([^ ]+?)( where (((.+?)([=&gt;&lt;]{1,2})(.+?)( and )?)+))?</Subexpression>
-    <Subexpression>\*|((\w+)\.)?(\w+)</Subexpression>
-    <Subexpression>\w+</Subexpression>
-    <Subexpression>((\w+)\.)?(\w+)([=&gt;&lt;]{1,2})((\w+)\.)?([^ ]+)</Subexpression>
+    <Subexpression>\*|(([\w0-9_]+)\.)?([\w0-9_]+)</Subexpression>
+    <Subexpression>[\w0-9_]+</Subexpression>
+    <Subexpression>(([\w0-9_]+)\.)?([\w0-9_]+)([=&gt;&lt;]{1,2})(([\w0-9_]+)\.)?('.+?'|[\w0-9_]+)</Subexpression>
   </Expression>
   <Expression name="droptable" subcount="1">
     <Subexpression>droptable (\w+)</Subexpression>

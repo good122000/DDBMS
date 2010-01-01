@@ -149,126 +149,123 @@ private:
 class QueryRes;
 
 class MyRow:
-	public std::map<std::string ,std::string >,public boost::enable_shared_from_this<MyRow>
+	public std::vector<std::string >
 {
 public:
-	MyRow(std::map<std::string ,std::vector<std::string > >& column):column_(column)
+	MyRow(const std::vector<char >& key):keyflag_(key)
 	{
 	}
-	MyRow(const MyRow& row)column_(
+	MyRow(const MyRow& row)
 	{
-		if(this!=&row)
-		{
-			std::map<std::string ,std::string >::operator=(row);
-			column_=row.column_;
-
-		}
+		*this=row;
 	}
-	MyRow& operator=(MyRow& row)
+	MyRow& operator=(const MyRow& row)
 	{
-		if(this!=&row)
-		{
-			std::map<std::string ,std::string >::operator=(row);
-			column_=row.column_;
-
-		}
+		std::vector<std::string >::operator=(row);
+		keyflag_=row.keyflag_;
+		return *this;
 	}
 	virtual ~MyRow(){};
+	bool operator<(const MyRow& row)
+	{
+		std::size_t pos=0;
+		for(;pos<this->size();++pos)
+		{
+			if(keyflag_[pos]==1)
+			{
+				int cmp=(*this)[pos].compare(row[pos]);
+				if(cmp<0) return true;
+				else if(cmp>0) return false;
+
+			}
+
+		}
+		return false;
+	}
+	
+	
 
 private:
-	std::map<std::string ,std::vector<std::string > >& column_;
+	std::vector<char > keyflag_;
+	 //std::map<std::string ,std::vector<std::string > >& column_;
 };
 
-typedef boost::shared_ptr<MyRow> MyRowPtr;
+//typedef boost::shared_ptr<MyRow> MyRowPtr;
 
 //typedef std::vector<MyRowPtr> MyQueryRes;
 class GDD;
 
-class MyQueryRes
+class LocalAgent;
+
+class MyQueryRes:
+	public std::vector<MyRow >,public boost::enable_shared_from_this<MyQueryRes >
 {
 	typedef std::pair<std::string ,std::string > RowPair;
 	typedef std::pair<std::string ,std::vector<std::string > > ColumnPair;
 	typedef std::vector<MyRow > Row;
 	typedef std::map<std::string ,std::vector<std::string > > Column;
 public:
-	template <typename T >
-	class Iterator
+	MyQueryRes(){};
+	MyQueryRes(QueryRes& res,GDD* gdd);
+	MyQueryRes(GDD* gdd,std::vector<std::string >& feilds);
+	MyQueryRes(const MyQueryRes& res):std::vector<MyRow >(res),gdd_(res.gdd_)
 	{
-	public:
-		Iterator& operator=(Iterator& iter)
-		{
-			iter_=iter.iter_;
-			return *this;
-		}
-		Iterator& operator++()
-		{
-			++iter_;
-			return *this;
-		}
-		Iterator& operator++(int )
-		{
-			iter_++;
-			return *this;
-		}
-		bool operator==(Iterator& iter)
-		{
-			return iter_==iter.iter_;
-		}
-	    bool operator!=(Iterator& iter)
-		{
-			return iter_!=iter.iter_;
-		}
-		MyRow& operator*()
-		{
-			return *iter_;
-		}
-		friend class MyQueryRes;
-	private:
-		typename T::iterator iter_;
+		//std::vector<MyRow >::operator =(res);
+		feilds_=res.feilds_;
+		rows_=res.rows_;
+		columns_=res.columns_;
+		keyflag_=res.keyflag_;
+		feildlen_=res.feildlen_;
+		tablename_=res.tablename_;
+		gdd_=res.gdd_;
+	}
+	MyQueryRes& operator=(const MyQueryRes& res)
+	{
+		std::vector<MyRow >::operator =(res);
+		feilds_=res.feilds_;
+		rows_=res.rows_;
+		columns_=res.columns_;
+		keyflag_=res.keyflag_;
+		feildlen_=res.feildlen_;
+		tablename_=res.tablename_;
+		gdd_=res.gdd_;
 
-	};
-	MyQueryRes(QueryRes& res,GDD& gdd);
-	MyQueryRes(GDD& gdd,std::vector<std::string >& feilds);
-	Iterator<Row> RowBegin()
-	{
-		Iterator<Row> iter;
-		iter.iter_=row_.begin();
 	}
-	Iterator<Column> ColumnBegin()
+	void CopyAttr(const MyQueryRes& res)
 	{
-		Iterator<Column> iter;
-		iter.iter_=column_.begin();
+		feilds_=res.feilds_;
+		rows_=res.rows_;
+		columns_=res.columns_;
+		keyflag_=res.keyflag_;
+		feildlen_=res.feildlen_;
+		tablename_=res.tablename_;
+		gdd_=res.gdd_;
 	}
-	Iterator<Row> RowEnd()
-	{
-		Iterator<Row> iter;
-		iter.iter_=row_.end();
-	}
-	Iterator<Column> ColumnEnd()
-	{
-		Iterator<Column> iter;
-		iter.iter_=column_.end();
-	}
+
+	
 	virtual ~MyQueryRes(){};
 	void Join(MyQueryRes& res);
 	void Union(MyQueryRes& res);
 	void Projection(std::vector<std::string >& feilds);
 	friend class QueryRes;
+	friend class LocalAgent;
 private:
 	bool IsKey(int index);
 	void SetKeyFlag();
 	int rows_;
 	int columns_;
-	Row row_;
+	//Row row_;
 	//std::vector<MyRow >::iterator iter_;
-	Column column_;
+	//Column column_;
 	std::vector<std::string > feilds_;
 	//std::set<std::string > keyfeilds_;
-	std::vector<char > keyflag;  //1 key,0 not key
-	std::vector<int> feildlen;
+	std::vector<char > keyflag_;  //1 key,0 not key
+	std::vector<int> feildlen_;
 	std::string tablename_;
-	GDD& gdd_;
+	GDD* gdd_;
 };
+
+typedef boost::shared_ptr<MyQueryRes> MyQueryResPtr;
 
 class QueryRes:
 	public TiXmlDocument,public boost::enable_shared_from_this<QueryRes>
@@ -279,13 +276,17 @@ public:
 	QueryRes(bool success,std::string& type,std::string& table=std::string(""),int rows=0,int columns=0);
 	virtual ~QueryRes(){};
 	void Insert(std::vector<std::string >& value);
-	void ConvertToMyQueryRes(MyQueryRes& res);
+	//void ConvertToMyQueryRes(MyQueryRes& res);
 	//void Join(QueryRes const & x);
 	//void Union(QueryRes const & x);
 	//void Projection(std::string const x[]);
 	//bool Empty();
 	//int Rows();
 	//int Columns();
+	bool Empty()
+	{
+		return nodata_;
+	}
 	friend class MyQueryRes;
 private:
 	bool success_;
@@ -538,6 +539,7 @@ public:
 	bool GetAppSetting(std::string const & name,std::string& value);
 	bool SetSqlSetting(std::string const & name,std::string& value);
 	bool SetAppSetting(std::string const & name,std::string& value);
+	bool GetAllMemoryTable(std::vector<std::string >& tables);
 
 private:
 	bool vaild;
@@ -590,6 +592,7 @@ typedef boost::shared_ptr<SubSelection> SubSelectionPtr;
 
 class LocalAgent
 {
+	
 	typedef bool (LocalAgent::* RevCmdFunc)(SessionPtr senssion, RevCmd &cmd);
 	typedef std::map<std::string,RevCmdFunc > RevFuncmap;
 	typedef bool (LocalAgent::* SendCmdFunc)(CPRes& res);
@@ -632,6 +635,10 @@ private:
 	bool RevDropDB(SessionPtr senssion, RevCmd &cmd);
 	void ResultProcess(DataList& datalist,CPRes& res);
 	bool ConnectToSql();
+	bool CreateTable(std::string& tablename,std::vector<std::pair<char,std::string> >& feilds,const std::string& engine);
+	bool ToSelectString(TiXmlDocument* xmlselect,std::string& strselect);
+	void Print(mysqlpp::StoreQueryResult& res);
+	bool ClearMemoryDB();
 	//bool AddSelectFeild(CPRes& res,std::string const & table,std::string const & feild);
 	Server server_;
 	CProcessor cprocessor_;

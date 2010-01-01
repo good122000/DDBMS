@@ -7,23 +7,23 @@
         <Site name="site3" address="localhost" port="3456" />
     </SiteSetting>
     <TableInfo>
-        <Table name="Student">
+        <Table name="student">
             <Feild key="yes" type="int" count="1">id</Feild>
             <Feild key="no" type="char" count="25">name</Feild>
             <Feild key="no" type="char" count="1">sex</Feild>
         </Table>
-        <Table name="Course">
+        <Table name="course">
             <Feild key="yes" type="int" count="1">id</Feild>
             <Feild key="no" type="char" count="80">name</Feild>
         </Table>
-        <Table name="Exam">
+        <Table name="exam">
             <Feild key="yes" type="int" count="1">student_id</Feild>
             <Feild key="yes" type="int" count="1">course_id</Feild>
             <Feild key="no" type="int" count="1">mark</Feild>
         </Table>
     </TableInfo>
     <TableSetting count="3">
-        <Table name="Student" fragmentation="horizontal" sites="3">
+        <Table name="student" fragmentation="horizontal" sites="3">
             <Site name="site1" conditions="1">
                 <Range var="id">
                     <Low equal="yes">MIN</Low>
@@ -43,7 +43,7 @@
                 </Range>
             </Site>
         </Table>
-        <Table name="Course" fragmentation="horizontal" sites="2">
+        <Table name="course" fragmentation="horizontal" sites="2">
             <Site name="site1" conditions="1">
                 <Range var="id">
                     <Low equal="yes">MIN</Low>
@@ -57,7 +57,7 @@
                 </Range>
             </Site>
         </Table>
-        <Table name="Exam" fragmention="horizontal" sites="3">
+        <Table name="exam" fragmention="horizontal" sites="3">
             <Site name="site1" conditions="1">
                 <Range var="student_id">
                     <Low equal="yes">MIN</Low>

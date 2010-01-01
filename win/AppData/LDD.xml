@@ -8,6 +8,12 @@
         <UserName>root</UserName>
         <PassWord>8923131</PassWord>
         <DataBase>ddbms1</DataBase>
+        <Table engine="innodb">student</Table>
+        <Table engine="innodb">course</Table>
+        <Table engine="innodb">exam</Table>
+        <Table engine="memory">student_memory</Table>
+        <Table engine="memory">course_memory</Table>
+        <Table engine="memory">exam_memory</Table>
     </SqlSetting>
     <AppSetting>
         <SiteName>site1</SiteName>

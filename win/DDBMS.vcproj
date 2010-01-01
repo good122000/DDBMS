@@ -116,7 +116,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="D:\DDBMS\src\TinyXML;&quot;F:\Program Files\boost\boost_1_39&quot;;D:\DDBMS\src\LocalAgent"
+				AdditionalIncludeDirectories="D:\DDBMS\src\MySQL;&quot;D:\DDBMS\src\MySQL++&quot;;D:\DDBMS\src\TinyXML;&quot;F:\Program Files\boost\boost_1_39&quot;;D:\DDBMS\src\LocalAgent"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"

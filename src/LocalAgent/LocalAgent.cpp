@@ -11,10 +11,11 @@
 
 //*******************************************************************************************************
 
-MyQueryRes::MyQueryRes(QueryRes &res,GDD& gdd):gdd_(gdd)
+MyQueryRes::MyQueryRes(QueryRes &res,GDD* gdd):gdd_(gdd)
 {
 	
 	feilds_=res.feilds_;
+	SetKeyFlag();
 	tablename_=res.tablename_;
 	rows_=res.rows_;
 	columns_=res.columns_;
@@ -22,11 +23,11 @@ MyQueryRes::MyQueryRes(QueryRes &res,GDD& gdd):gdd_(gdd)
 	TiXmlElement* root=res.RootElement();
 	TiXmlElement* row=root->FirstChildElement("Row");
 	std::vector<std::string >::const_iterator iter;
-	for(iter=feilds_.begin();iter!=feilds_.end();++iter)
-	{
-		column_.insert(ColumnPair(*iter,std::vector<std::string >()));
-	}
-	row_.assign(rows_,MyRow());
+	//for(iter=feilds_.begin();iter!=feilds_.end();++iter)
+	//{
+	//	column_.insert(ColumnPair(*iter,std::vector<std::string >()));
+	//}
+	assign(rows_,MyRow(keyflag_));
 	int index=0;
 	while(row!=NULL)
 	{
@@ -35,36 +36,35 @@ MyQueryRes::MyQueryRes(QueryRes &res,GDD& gdd):gdd_(gdd)
 		TiXmlElement* feild=row->FirstChildElement();
 		while(feild!=NULL && iter!=feilds_.end())
 		{
+			
 			//myrow->insert(MyPair(*iter,feild->GetText()));
-			row_[index].insert(RowPair(*iter,feild->GetText()));
-			column_[*iter].push_back(feild->GetText());
+			(*this)[index].push_back(feild->GetText());
+			//column_[*iter].push_back(feild->GetText());
 			feild=feild->NextSiblingElement();
 			iter++;
 		}
 		row=row->NextSiblingElement("Row");
 		index++;
 	}
-	//GetKeyFeilds(
-
-	SetKeyFlag();
+	
 }
 
-MyQueryRes::MyQueryRes(GDD& gdd,std::vector<std::string >& feilds):gdd_(gdd),feilds_(feilds)
+MyQueryRes::MyQueryRes(GDD* gdd,std::vector<std::string >& feilds):gdd_(gdd),feilds_(feilds)
 {
 }
 
 void MyQueryRes::SetKeyFlag()
 {
 	std::set<std::string > key;
-	gdd_.GetKeyFeilds(tablename_,key);
+	gdd_->GetKeyFeilds(tablename_,key);
 	//std::vector<std::string >::const_iterator iter;
-	for(int i=0;i<feilds_.size();++i)
+	for(std::size_t i=0;i<feilds_.size();++i)
 	{
 		if(key.find(feilds_[i])!=key.end())
 		{
-			keyflag[i]=1;
+			keyflag_[i]=1;
 		}
-		else keyflag[i]=0;
+		else keyflag_[i]=0;
 	}
 
 	//gdd_.GetKeyFeilds(key);
@@ -72,7 +72,7 @@ void MyQueryRes::SetKeyFlag()
 
 bool MyQueryRes::IsKey(int index)
 {
-	return keyflag[index]==1 ? true : false ;
+	return keyflag_[index]==1 ? true : false ;
 }
 
 void MyQueryRes::Join(MyQueryRes& res)
@@ -457,7 +457,7 @@ char const * Client::GetData()
 
 Client::~Client()
 {
-	std::cout<<"Client closed"<<std::endl;
+	//std::cout<<"Client closed"<<std::endl;
 	delete [] senddata_;
 	//DoClose();
 }
@@ -635,7 +635,7 @@ void Session::HandleWrite(const boost::system::error_code &error,std::size_t cou
 
 void Session::Start(boost::function<bool (SessionPtr, Data &cmd ) > handler)
 {
-	std::cout<<"new senssion"<<std::endl;
+	//std::cout<<"new senssion"<<std::endl;
 	memset(&buffer_,0,sizeof(buffer_));
 	boost::asio::async_read(socket_,
 		boost::asio::buffer(&buffer_, sizeof(buffer_)),
@@ -723,13 +723,15 @@ void Session::DoClose()
 
 Session::~Session()
 {
-	std::cout<<"session closed"<<std::endl;
+	//std::cout<<"session closed"<<std::endl;
 	delete [] senddata_;
 	//DoClose();
 }
 
 void Session::Print()
 {
+	std::string str;
+	
 	//cout<<data_.GetData()<<endl;
 }
 
@@ -932,100 +934,108 @@ bool CProcessor::AddSelectFeild(CPRes &res,const std::string &table,const std::s
 
 bool CProcessor::Select(std::string const & com,std::vector<boost::regex > const & reg,CPRes& res)
 {
-	boost::smatch what;
-	if(!boost::regex_match(com,what,reg[0])) return false;
-	TiXmlDeclaration* decl=NEWD("1.0","","");
-	res.LinkEndChild(decl);
-	TiXmlComment* comment=NEWC("select");
-	res.LinkEndChild(comment);
-	TiXmlElement* root=NEWE("Select");
-	res.LinkEndChild(root);
-	std::string substr1=what[1].str();
-	std::string substr2=what[2].str();
-	std::string substr3=what[4].str();
-	std::string::const_iterator at=substr2.begin();
-	std::string::const_iterator end=substr2.end();
-	while(boost::regex_search(at,end,what,reg[2]))
+	try
 	{
-		TiXmlElement* element=NEWE("Table");
-		element->SetAttribute("name",what[0].str());
-		root->LinkEndChild(element);
-		at=what[0].second;
-	}
-	at=substr1.begin();
-	end=substr1.end();
-	while(boost::regex_search(at,end,what,reg[1]))
-	{
-		if(what[0].str().compare("*")==0)
+		boost::smatch what;
+		if(!boost::regex_match(com,what,reg[0])) return false;
+		TiXmlDeclaration* decl=NEWD("1.0","","");
+		res.LinkEndChild(decl);
+		TiXmlComment* comment=NEWC("select");
+		res.LinkEndChild(comment);
+		TiXmlElement* root=NEWE("Select");
+		res.LinkEndChild(root);
+		std::string substr1=what[1].str();
+		std::string substr2=what[2].str();
+		std::string substr3=what[4].str();
+		std::string::const_iterator at=substr2.begin();
+		std::string::const_iterator end=substr2.end();
+		while(boost::regex_search(at,end,what,reg[2]))
 		{
-			TiXmlElement* element=root->FirstChildElement("Table");
-			while(element!=NULL)
-			{
-				TiXmlElement* son=NEWE("Feild");
-				son->SetAttribute("type","projection");
-				son->LinkEndChild(NEWT("*"));
-				element->LinkEndChild(son);
-				element=element->NextSiblingElement("Table");
-			}
-		}
-		else
-		{
-			
-			if(!(what[1].matched)) return false;
-			TiXmlElement* element=root->FirstChildElement("Table");
-			while(element!=NULL)
-			{
-				std::string name=element->Attribute("name");
-				if(name.compare(what[2].str())==0)
-				{
-					TiXmlElement* son=NEWE("Feild");
-					son->SetAttribute("type","projection");
-					son->LinkEndChild(NEWT(what[3].str()));
-					element->LinkEndChild(son);
-					break;
-				}
-				else
-				{
-					element=element->NextSiblingElement("Table");
-				}
-			}
-		}
-		at=what[0].second;
-	}
-	if(substr3.compare("")!=0)
-	{
-		at=substr3.begin();
-		end=substr3.end();
-		while(boost::regex_search(at,end,what,reg[3]))
-		{
-			TiXmlElement* element=NEWE("Condition");
-			TiXmlElement* son=NEWE("Left");
-			son->SetAttribute("type","feild");
-			son->SetAttribute("table",what[2].str());
-			son->LinkEndChild(NEWT(what[3].str()));
-			element->LinkEndChild(son);
-			AddSelectFeild(res,what[2].str(),what[3].str());
-			son=NEWE("Operator");
-			son->LinkEndChild(NEWT(what[4].str()));
-			element->LinkEndChild(son);
-			son=NEWE("Right");
-			if(what[5].matched)
-			{
-				son->SetAttribute("type","Feild");
-				son->SetAttribute("table",what[6].str());
-			}
-			else
-			{
-				son->SetAttribute("type","value");
-			}
-			son->LinkEndChild(NEWT(what[7].str()));
-			element->LinkEndChild(son);
-			AddSelectFeild(res,what[6].str(),what[7].str());
+			TiXmlElement* element=NEWE("Table");
+			element->SetAttribute("name",what[0].str());
 			root->LinkEndChild(element);
 			at=what[0].second;
 		}
+		at=substr1.begin();
+		end=substr1.end();
+		while(boost::regex_search(at,end,what,reg[1]))
+		{
+			if(what[0].str().compare("*")==0)
+			{
+				TiXmlElement* element=root->FirstChildElement("Table");
+				while(element!=NULL)
+				{
+					TiXmlElement* son=NEWE("Feild");
+					son->SetAttribute("type","projection");
+					son->LinkEndChild(NEWT("*"));
+					element->LinkEndChild(son);
+					element=element->NextSiblingElement("Table");
+				}
+			}
+			else
+			{
+				
+				if(!(what[1].matched)) return false;
+				TiXmlElement* element=root->FirstChildElement("Table");
+				while(element!=NULL)
+				{
+					std::string name=element->Attribute("name");
+					if(name.compare(what[2].str())==0)
+					{
+						TiXmlElement* son=NEWE("Feild");
+						son->SetAttribute("type","projection");
+						son->LinkEndChild(NEWT(what[3].str()));
+						element->LinkEndChild(son);
+						break;
+					}
+					else
+					{
+						element=element->NextSiblingElement("Table");
+					}
+				}
+			}
+			at=what[0].second;
+		}
+		if(substr3.compare("")!=0)
+		{
+			at=substr3.begin();
+			end=substr3.end();
+			while(boost::regex_search(at,end,what,reg[3]))
+			{
+				TiXmlElement* element=NEWE("Condition");
+				TiXmlElement* son=NEWE("Left");
+				son->SetAttribute("type","feild");
+				son->SetAttribute("table",what[2].str());
+				son->LinkEndChild(NEWT(what[3].str()));
+				element->LinkEndChild(son);
+				AddSelectFeild(res,what[2].str(),what[3].str());
+				son=NEWE("Operator");
+				son->LinkEndChild(NEWT(what[4].str()));
+				element->LinkEndChild(son);
+				son=NEWE("Right");
+				if(what[5].matched)
+				{
+					son->SetAttribute("type","Feild");
+					son->SetAttribute("table",what[6].str());
+				}
+				else
+				{
+					son->SetAttribute("type","value");
+				}
+				son->LinkEndChild(NEWT(what[7].str()));
+				element->LinkEndChild(son);
+				AddSelectFeild(res,what[6].str(),what[7].str());
+				root->LinkEndChild(element);
+				at=what[0].second;
+			}
+		}
+		return true;
 	}
-	return true;
+	catch(std::exception& e)
+	{
+		std::cerr<<e.what()<<std::endl;
+		return false;
+	}
 }
 
 bool CProcessor::DropTable(std::string const & com,std::vector<boost::regex > const & reg,CPRes& res)
@@ -1206,6 +1216,24 @@ bool LDD::SetAppSetting(const std::string &name, std::string &value)
 	if(son==NULL) return false;
 	son->FirstChild()->ToText()->SetValue(value);
 	return true;
+}
+
+bool LDD::GetAllMemoryTable(std::vector<std::string >& tables)
+{
+	if(!vaild) return false;
+	TiXmlElement* root=doc_.RootElement();
+	TiXmlElement* element=root->FirstChildElement("SqlSetting");
+	TiXmlElement* son=element->FirstChildElement("Table");
+	std::string engine="memory";
+	while(son!=NULL)
+	{
+		if(engine.compare(son->Attribute("engine"))==0)
+			tables.push_back(son->GetText());
+		son=son->NextSiblingElement("Table");
+	}
+	
+	return true;
+
 }
 
 bool LDD::SetSqlSetting(const std::string &name, std::string &value)
@@ -1509,7 +1537,7 @@ int GDD::StringToInt(const std::string &str)
 
 //************************************************************************
 
-LocalAgent::LocalAgent():gdd_(".\\AppData\\GDD.xml"),ldd_(".\\AppData\\LDD.xml"),cprocessor_(".\\AppData\\regex.xml"),server_(),conn_(false)
+LocalAgent::LocalAgent():gdd_(".\\AppData\\GDD.xml"),ldd_(".\\AppData\\LDD.xml"),cprocessor_(".\\AppData\\regex.xml"),server_(),conn_()
 {
 	typedef std::pair<std::string, SendCmdFunc > SendPair;
 	typedef std::pair<std::string, RevCmdFunc > RevPair;
@@ -1543,14 +1571,21 @@ LocalAgent::LocalAgent():gdd_(".\\AppData\\GDD.xml"),ldd_(".\\AppData\\LDD.xml")
 
 bool LocalAgent::ConnectToSql()
 {
-	std::string address,port,user,pass,db,server;
-	ldd_.GetSqlSetting("Address",address);
-	ldd_.GetSqlSetting("Port",port);
-	ldd_.GetSqlSetting("UserName",user);
-	ldd_.GetSqlSetting("PassWord",pass);
-	ldd_.GetSqlSetting("DataBase",db);
-	
-	return connected=conn_.connect(db.c_str(),server.c_str(),user.c_str(),pass.c_str(),atoi(port.c_str()));
+	try
+	{
+		std::string address,port,user,pass,db,server;
+		ldd_.GetSqlSetting("Address",address);
+		ldd_.GetSqlSetting("Port",port);
+		ldd_.GetSqlSetting("UserName",user);
+		ldd_.GetSqlSetting("PassWord",pass);
+		ldd_.GetSqlSetting("DataBase",db);
+		return connected=conn_.connect(db.c_str(),server.c_str(),user.c_str(),pass.c_str(),atoi(port.c_str()));
+	}
+	catch(std::exception& e)
+	{
+		std::cerr<<e.what()<<std::endl;
+		return false;
+	}
 }
 
 void LocalAgent::Start()
@@ -1573,8 +1608,15 @@ void LocalAgent::StartLocalServer()
 	ldd_.GetAppSetting("RevPort",lisenning);
 	ldd_.GetAppSetting("ThreadPollSize",size);
 	//Server server(atoi(size.c_str()),atoi(lisenning.c_str()),boost::bind(&LocalAgent::ExecuteCmd,this,_1,_2));
-	server_.CreateServer(atoi(size.c_str()),atoi(lisenning.c_str()),bind(&LocalAgent::ExecuteCmd,this,_1,_2));
-	server_.Run();
+	try
+	{
+		server_.CreateServer(atoi(size.c_str()),atoi(lisenning.c_str()),bind(&LocalAgent::ExecuteCmd,this,_1,_2));
+		server_.Run();
+	}
+	catch(std::exception& e)
+	{
+		std::cerr<<e.what()<<std::endl;
+	}
 	
 }
 
@@ -1591,14 +1633,30 @@ void LocalAgent::StartRevLocalCmd(std::istream &in)
 
 		}
 		CPRes res;
-		cprocessor_.SplitCom(cmd,res);
-		std::string cmdtype=res.RootElement()->Value();
-		SendFuncmap::iterator iter=sendfuncmap_.find(cmdtype);
-		if(iter!=sendfuncmap_.end())
+		if(!cprocessor_.SplitCom(cmd,res))
 		{
-			SendCmdFunc func=iter->second;
-			(this->*func)(res);
+			std::cerr<<"no such cmd!"<<std::endl;
+
 		}
+		//std::cout<<res<<std::endl;
+		else
+		{
+			std::string cmdtype=res.RootElement()->Value();
+			SendFuncmap::iterator iter=sendfuncmap_.find(cmdtype);
+			if(iter!=sendfuncmap_.end())
+			{
+				try
+				{
+					SendCmdFunc func=iter->second;
+					(this->*func)(res);
+				}
+				catch(std::exception& e)
+				{
+					std::cerr<<e.what()<<std::endl;
+				}
+			}
+		}
+		
 	}
 }
 
@@ -1612,8 +1670,16 @@ bool LocalAgent::ExecuteCmd(SessionPtr senssion, Data &cmd)
 	RevFuncmap::iterator iter=revfuncmap_.find(cmdtype);
 	if(iter!=revfuncmap_.end())
 	{
-		RevCmdFunc func=iter->second;
-		return (this->*func)(senssion,revcmd);
+		try
+		{
+			RevCmdFunc func=iter->second;
+			return (this->*func)(senssion,revcmd);
+		}
+		catch(std::exception& e)
+		{
+			std::cerr<<e.what()<<std::endl;
+			return false;
+		}
 	}
 	return false;
 }
@@ -1885,6 +1951,7 @@ bool LocalAgent::SendSelect(CPRes &res)
 	for (std::size_t i = 0; i < threads.size(); ++i)
 		threads[i]->join();
 	ResultProcess(datalist,res);
+	
 	//std::for_each(datalist.begin(),datalist.end(),boost::bind(Release<Data>,_1));
 
 	//返回结果处理
@@ -1954,23 +2021,213 @@ bool LocalAgent::SendDropTable(CPRes &res)
 	return true;
 }
 
+bool LocalAgent::CreateTable(std::string& tablename,std::vector<std::pair<char,std::string> >& feilds,const std::string& engine=std::string("InnoDB"))
+{
+	/*
+	CREATE TABLE `course_memory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(80) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MEMORY DEFAULT CHARSET=utf8;
+*/
+	//std::string create="create table ";
+	//create+="'"+tablename+"'"
+	return true;
+
+}
+
+bool LocalAgent::ToSelectString(TiXmlDocument* xmlselect,std::string& strselect)
+{
+	TiXmlElement* root=xmlselect->RootElement();
+	TiXmlElement* table=root->FirstChildElement("Table");
+	strselect="select ";
+	std::vector<std::string > tables;
+	while(table!=NULL)
+	{
+		std::string tablename=table->Attribute("name");
+		tablename+="_memory";
+		tables.push_back(tablename);
+		TiXmlElement* feild=table->FirstChildElement("Feild");
+		while(feild!=NULL)
+		{
+			if(feild->Attribute("type")==NULL)
+			{
+				feild=feild->NextSiblingElement("Feild");
+				continue;
+				
+			}
+			std::string feildtext=feild->GetText();
+			if(feildtext.compare("*")==0)
+			{
+				strselect+=feildtext+" ";
+				break;
+			}
+			strselect+=tablename+"."+feildtext+",";
+			feild=feild->NextSiblingElement("Feild");
+		}
+		table=table->NextSiblingElement("Table");
+	}
+	strselect[strselect.size()-1]=' ';
+	strselect+="from ";
+	for(std::size_t i=0;i<tables.size();i++)
+	{
+		strselect+=tables[i]+",";
+	}
+	strselect[strselect.size()-1]=' ';
+	//strselect+="where ";
+	TiXmlElement* condition=root->FirstChildElement("Condition");
+	if(condition!=NULL) strselect+="where ";
+	while(condition!=NULL)
+	{
+		std::string type="value";
+		TiXmlElement* left=condition->FirstChildElement("Left");
+		TiXmlElement* op=condition->FirstChildElement("Operator");
+		TiXmlElement* right=condition->FirstChildElement("Right");
+		strselect+=left->Attribute("table");
+		strselect+="_memory";
+		strselect+=".";
+		strselect+=left->GetText();
+		strselect+=op->GetText();
+		if(type.compare(right->Attribute("type"))==0)
+		{
+			strselect+=right->GetText();
+		}
+		else
+		{
+			strselect+=right->Attribute("table");
+			strselect+="_memory";
+			strselect+=".";
+			strselect+=right->GetText();
+
+		}
+		strselect+=" and ";
+		condition=condition->NextSiblingElement("Condition");
+	}
+	std::string fstr="and";
+	std::size_t found=strselect.rfind(fstr);
+	if (found!=std::string::npos)
+		strselect.replace (found,fstr.length(),";");
+	return true;
+
+	//strselect[strselect.refind_last_of("and")-2]=';';
+	//TiXmlElement* feild=table->FirstChildElement("Feild");
+
+
+
+}
+
+bool LocalAgent::ClearMemoryDB()
+{
+	std::vector<std::string > tables;
+	ldd_.GetAllMemoryTable(tables);
+	try
+	{
+		mysqlpp::Query sqldelete = conn_.query();
+		for(std::vector<std::string >::iterator iter=tables.begin();iter!=tables.end();++iter)
+		{
+			sqldelete.exec("delete from "+(*iter));
+		}
+	}
+	catch(std::exception& e)
+	{
+		std::cout<<e.what()<<std::endl;
+		return false;
+	}
+	return true;
+	
+}
+
 void LocalAgent::ResultProcess(LocalAgent::DataList &datalist, CPRes &res)
 {
-	
-	std::list<QueryResPtr> reslist;
+	ClearMemoryDB();
 	DataList::iterator iter=datalist.begin();
 	while(iter!=datalist.end())
 	{
-		QueryResPtr queryres(new QueryRes(*iter));
-		reslist.push_back(queryres);
-		//std::cout<<(*iter)->GetData()<<std::endl;
+		QueryRes queryres(*iter);
+		if(queryres.Empty())
+		{
+			iter++;
+			continue;
+		}
+		try
+		{
+			TiXmlElement* root=queryres.RootElement();
+			std::string tablename=root->Attribute("table");
+			std::string memtablename=tablename+"_memory";
+			//mysqlpp::Query sqldelete = conn_.query();
+			//sqldelete.exec("delete from "+memtablename);
+			std::vector<std::string > feilds;
+			gdd_.GetTableFeilds(tablename,feilds);
+			TiXmlElement* row=root->FirstChildElement("Row");
+			while(row!=NULL)
+			{
+				std::string insert="insert into ";
+				insert+=memtablename+" values(";
+				for(std::size_t i=0;i<feilds.size();i++)
+				{
+					TiXmlElement* feild=row->FirstChildElement(feilds[i]);
+					if(feild!=NULL)
+					{
+						insert+="'";
+						insert+=feild->GetText();
+						insert+="'";
+						
+					}
+					else
+					{
+						insert+="NULL";
+
+					}
+					insert+=",";
+				}
+				insert[insert.size()-1]=' ';
+				insert+=")";
+				mysqlpp::Query sqlquery = conn_.query(insert);
+				bool ok=sqlquery.exec(insert);
+				row=row->NextSiblingElement("Row");
+			}
+		}
+		catch(std::exception& e)
+		{
+			std::cerr<<e.what()<<std::endl;
+			return;
+		}
 		iter++;
+		
+	}
+	std::string query;
+	ToSelectString(&res,query);
+	mysqlpp::Query sqlquery = conn_.query(query);
+	if (mysqlpp::StoreQueryResult queryres = sqlquery.store())
+	{
+		//mysqlpp::Field test;
+		Print(queryres);
 	}
 
+}
+
+void LocalAgent::Print(mysqlpp::StoreQueryResult& res)
+{
+	using namespace std;
+	cout.setf(ios::left);
+	mysqlpp::Fields feilds=res.fields();
+	for(std::size_t i=0;i<feilds.size();i++)
+	{
+		cout<<setw(feilds[i].length())<<feilds[i].name();
+
+	}
+	cout<<endl;
+	for(std::size_t i=0;i<res.num_rows();i++)
+	{
+		for(std::size_t j=0;j<res.num_fields();j++)
+		{
+			cout<<setw(feilds[j].length())<<res[i][j];
+		}
+		cout<<endl;
+	}
 	
 
 	
-
 }
 
 bool LocalAgent::RevDefineSite(SessionPtr senssion, RevCmd &cmd)
@@ -2084,53 +2341,56 @@ bool LocalAgent::RevSelect(SessionPtr senssion, RevCmd &cmd)
 	//std::string data;
 	//data<<res;
 	//RevCmd
+	
+	std::string query="select ";
+	TiXmlElement* root=cmd.RootElement();
+	TiXmlElement* table=root->FirstChildElement("Table");
+	TiXmlElement* feild=table->FirstChildElement("Feild");
+	std::string all=feild->GetText();
+	std::string tablename=table->Attribute("name");
+	std::vector<std::string > feilds;
+	while(true)
+	{
+		query+=feild->GetText();
+		feilds.push_back(feild->GetText());
+		feild=feild->NextSiblingElement("Feild");
+		if(feild!=NULL) 
+		{
+			query+=",";
+		}
+		else
+		{
+			query+=" ";
+			break;
+		}
+	}
+	
+	query+="from "+tablename;;
+	TiXmlElement* condition=root->FirstChildElement("Condition");
+	if(condition!=NULL)
+	{
+		query+=" where ";
+		query+=condition->FirstChildElement("Left")->GetText();
+		query+=condition->FirstChildElement("Operator")->GetText();
+		query+=condition->FirstChildElement("Right")->GetText();
+	}
+	if(all.compare("*")==0)
+	{
+		feilds.clear();
+		
+		gdd_.GetTableFeilds(tablename,feilds);
+		//feilds=temp;
+	}
+	
+	mysqlpp::Query sqlquery = conn_.query(query);
 	try
 	{
-		
-		std::string query="select ";
-		TiXmlElement* root=cmd.RootElement();
-		TiXmlElement* table=root->FirstChildElement("Table");
-		TiXmlElement* feild=table->FirstChildElement("Feild");
-		std::string all=feild->GetText();
-		std::string tablename=table->Attribute("name");
-		std::vector<std::string > feilds;
-		while(true)
-		{
-			query+=feild->GetText();
-			feilds.push_back(feild->GetText());
-			feild=feild->NextSiblingElement("Feild");
-			if(feild!=NULL) 
-			{
-				query+=",";
-			}
-			else
-			{
-				query+=" ";
-				break;
-			}
-		}
-		
-		query+="from "+tablename;;
-		TiXmlElement* condition=root->FirstChildElement("Condition");
-		if(condition!=NULL)
-		{
-			query+=" where ";
-			query+=condition->FirstChildElement("Left")->GetText();
-			query+=condition->FirstChildElement("Operator")->GetText();
-			query+=condition->FirstChildElement("Right")->GetText();
-		}
-		if(all.compare("*")==0)
-		{
-			feilds.clear();
-			
-			gdd_.GetTableFeilds(tablename,feilds);
-			//feilds=temp;
-		}
-		
-		mysqlpp::Query sqlquery = conn_.query(query);
 		if (mysqlpp::StoreQueryResult res = sqlquery.store())
 		{
-			QueryRes queryres(feilds,true,std::string("data"),tablename,res.num_rows(),res.num_fields());
+			std::string type;
+			if(res.num_rows()>0) type="data";
+			else type="nodata";
+			QueryRes queryres(feilds,true,type,tablename,res.num_rows(),res.num_fields());
 			mysqlpp::StoreQueryResult::const_iterator it;
 			for(it=res.begin();it!=res.end();++it)
 			{
@@ -2145,14 +2405,21 @@ bool LocalAgent::RevSelect(SessionPtr senssion, RevCmd &cmd)
 			}
 			std::string data;
 			data<<queryres;
-			std::cout<<queryres<<std::endl;
+			//std::cout<<queryres<<std::endl;
 			senssion->Write((char*)data.c_str(),data.size(),data.size());
 		}
 		
 	}
 	catch(std::exception& e)
 	{
+
 		std::cerr<<e.what()<<std::endl;
+		QueryRes queryres(feilds,false,std::string("nodata"),tablename);
+		std::string data;
+		data<<queryres;
+		std::cout<<queryres<<std::endl;
+		senssion->Write((char*)data.c_str(),data.size(),data.size());
+
 		return false;
 	}
 	return true;
