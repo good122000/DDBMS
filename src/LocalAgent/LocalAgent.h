@@ -132,6 +132,11 @@ class CPRes:
 public:
 	CPRes():TiXmlDocument(){};
 	virtual ~CPRes(){};
+	std::string GetCmd()
+	{
+		TiXmlElement* root=RootElement();
+		return root->Value();
+	}
 private:
 };
 
@@ -286,6 +291,10 @@ public:
 	bool Empty()
 	{
 		return nodata_;
+	}
+	bool Ok()
+	{
+		return success_;
 	}
 	friend class MyQueryRes;
 private:

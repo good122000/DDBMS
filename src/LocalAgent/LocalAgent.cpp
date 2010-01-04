@@ -845,7 +845,7 @@ bool CProcessor::Insert(std::string const & com,std::vector<boost::regex > const
 	std::string::const_iterator end=substr1.end();
 	while(boost::regex_search(at,end,what,reg[1]))
 	{
-		TiXmlElement* element=NEWE("Field");
+		TiXmlElement* element=NEWE("Feild");
 		element->SetAttribute("name",what[0].str());
 		root->LinkEndChild(element);
 		at=what[0].second;
@@ -1164,7 +1164,7 @@ CProcessor::CProcessor(const std::string& xml)
 
 bool CProcessor::SplitCom(const std::string &com, CPRes &res)
 {
-	std::string name=com.substr(0,com.find_first_of(" "));
+	std::string name=com.substr(0,com.find(" "));
 	regexmap::iterator iter;
 	iter=regexs.find(name);
 	if(iter==regexs.end()) return false;
@@ -1622,9 +1622,10 @@ void LocalAgent::StartLocalServer()
 
 void LocalAgent::StartRevLocalCmd(std::istream &in)
 {
-	std::string cmd;
+	
 	while(true)
 	{
+		std::string cmd;
 		std::getline(in,cmd);
 		if(cmd.compare("exit")==0)
 		{
@@ -1782,6 +1783,7 @@ bool LocalAgent::SendFragment(CPRes& res)
 
 bool LocalAgent::SendInsert(CPRes &res)
 {
+	//std::cout<<res<<std::endl;
 	TiXmlElement* root=res.RootElement();
 	std::string table=root->Attribute("tablename");
 	TiXmlElement* element=root->FirstChildElement("Feild");
@@ -2139,6 +2141,7 @@ bool LocalAgent::ClearMemoryDB()
 
 void LocalAgent::ResultProcess(LocalAgent::DataList &datalist, CPRes &res)
 {
+	
 	ClearMemoryDB();
 	DataList::iterator iter=datalist.begin();
 	while(iter!=datalist.end())
@@ -2146,6 +2149,8 @@ void LocalAgent::ResultProcess(LocalAgent::DataList &datalist, CPRes &res)
 		QueryRes queryres(*iter);
 		if(queryres.Empty())
 		{
+			if(queryres.Ok()) std::cout<<"Ok!"<<std::endl;
+			else std::cout<<"Failed!"<<std::endl;
 			iter++;
 			continue;
 		}
@@ -2195,13 +2200,17 @@ void LocalAgent::ResultProcess(LocalAgent::DataList &datalist, CPRes &res)
 		iter++;
 		
 	}
-	std::string query;
-	ToSelectString(&res,query);
-	mysqlpp::Query sqlquery = conn_.query(query);
-	if (mysqlpp::StoreQueryResult queryres = sqlquery.store())
+	std::string cmd=res.GetCmd();
+	if(cmd.compare("Select")==0)
 	{
-		//mysqlpp::Field test;
-		Print(queryres);
+		std::string query;
+		ToSelectString(&res,query);
+		mysqlpp::Query sqlquery = conn_.query(query);
+		if (mysqlpp::StoreQueryResult queryres = sqlquery.store())
+		{
+			//mysqlpp::Field test;
+			Print(queryres);
+		}
 	}
 
 }

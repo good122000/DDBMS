@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!--local data dictionary-->
+<LDD>
+    <SqlSetting>
+        <SqlType>MySQL</SqlType>
+        <Address>localhost</Address>
+        <Port>3306</Port>
+        <UserName>root</UserName>
+        <PassWord>8923131</PassWord>
+        <DataBase>ddbms3</DataBase>
+        <Table engine="innodb">student</Table>
+        <Table engine="innodb">course</Table>
+        <Table engine="innodb">exam</Table>
+        <Table engine="memory">student_memory</Table>
+        <Table engine="memory">course_memory</Table>
+        <Table engine="memory">exam_memory</Table>
+    </SqlSetting>
+    <AppSetting>
+        <SiteName>site3</SiteName>
+        <RevPort>3456</RevPort>
+        <ThreadPollSize>10</ThreadPollSize>
+    </AppSetting>
+</LDD>
